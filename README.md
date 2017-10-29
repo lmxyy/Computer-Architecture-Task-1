@@ -10,4 +10,4 @@
 
 # Authority<a id="orgheadline1"></a>
 
--   This is the first homework of Computer Architecture, and the author is lmxyy.
+-   This is the first homework of Computer Architecture, and the author is Lmxyy.
