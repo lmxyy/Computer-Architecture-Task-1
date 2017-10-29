@@ -15,6 +15,8 @@
  *
  */
 
+`include"adder.v"
+
 module test_adder;
 	wire [15:0] answer;
 	reg  [15:0] a, b;
