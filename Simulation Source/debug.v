@@ -18,19 +18,22 @@
 `include"adder2.v"
 
 module test_adder;
-	wire [15:0] answer;
-	reg  [15:0] a, b;
-
-	adder adder (a, b, answer);
+   wire [3:0] answer;
+   reg [3:0]   a, b ;
+   reg 		   c;
+   wire 	   d;
+	adder4 adder (a, b, answer,c,d);
 	
 	integer i;
 	initial begin
-		for(i=1; i<=100; i=i+1) begin
-			a[14:0] = $random;
-			a[15] = 0;
-			b[14:0] = $random;
-			b[15] = 0;
-			
+		for(i=1; i<=1; i=i+1) begin
+			// a[14:0] = 1;
+			// a[15] = 0;
+			// b[14:0] = 3;
+			// b[15] = 0;
+		   a = 1;
+		   b = 3;
+		   
 			#1;
 			$display("TESTCASE %d: %d + %d = %d", i, a, b, answer);
 

@@ -35,7 +35,7 @@ module test_adder;
 			$display("TESTCASE %d: %d + %d = %d", i, a, b, answer);
 
 			if (answer !== a + b) begin
-				// $fatal("Wrong Answer!");
+			   $display("Wrong Answer!");
 			end
 		end
 		$display("Congratulations! You have passed all of the tests.");
