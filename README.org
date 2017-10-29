@@ -1,2 +1,3 @@
-* Computer Architecture Task 1
-This is the first homework of Computer Architecture, and the author is lmxyy.
+#+TITLE: Computer Architecture Task 1
+* Authority
++ This is the first homework of Computer Architecture, and the author is lmxyy.
