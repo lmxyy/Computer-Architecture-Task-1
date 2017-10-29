@@ -32,7 +32,7 @@ module test_adder;
 			#1;
 			$display("TESTCASE %d: %d + %d = %d", i, a, b, answer);
 
-			if (answer != a + b) begin
+			if (answer !== a + b) begin
 				$fatal("Wrong Answer!");
 			end
 		end
