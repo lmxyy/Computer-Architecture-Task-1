@@ -14,9 +14,7 @@
  *   6. You can see the results in `Tcl console'
  *
  */
-
 `include"adder2.v"
-
 module test_adder;
 	wire [15:0] answer;
 	reg  [15:0] a, b;
@@ -26,14 +24,11 @@ module test_adder;
 	integer i;
 	initial begin
 		for(i=1; i<=100; i=i+1) begin
-		   a[14:0] = $random;
-		   a[15] = 0;
-		   b[14:0] = $random;
-		   b[15] = 0;
-		   
-		   // a = 1;
-		   // b = 1;
-		   
+			a[14:0] = $random;
+			a[15] = 0;
+			b[14:0] = $random;
+			b[15] = 0;
+			
 			#1;
 			$display("TESTCASE %d: %d + %d = %d", i, a, b, answer);
 
