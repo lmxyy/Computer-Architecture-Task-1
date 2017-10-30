@@ -4,2983 +4,335 @@
 :vpi_module "system";
 :vpi_module "v2005_math";
 :vpi_module "va_math";
-S_0x22af0e0 .scope module, "adder" "adder" 2 23;
+S_0x278c690 .scope module, "test_adder" "test_adder" 2 20;
  .timescale 0 0;
-P_0x2297408 .param/l "maxn" 2 24, +C4<010000>;
-v0x22fac50_0 .net "c1", 0 0, v0x22fa9d0_0; 1 drivers
-v0x22fad40_0 .net "c2", 0 0, v0x22fa490_0; 1 drivers
-v0x22fae10_0 .net "c3", 0 0, v0x22f9f50_0; 1 drivers
-v0x22faee0_0 .net "c4", 0 0, v0x22f9a00_0; 1 drivers
-v0x22faf60_0 .net "sum", 15 0, L_0x22fc650; 1 drivers
-v0x22fafe0_0 .net "tmp1", 3 0, v0x22faa80_0; 1 drivers
-v0x22fb0a0_0 .net "tmp2", 3 0, v0x22fa540_0; 1 drivers
-v0x22fb120_0 .net "tmp3", 3 0, v0x22fa000_0; 1 drivers
-v0x22fb220_0 .net "tmp4", 3 0, v0x22f9aa0_0; 1 drivers
-v0x22fb2d0_0 .net "x", 15 0, C4<0000000000000001>; 1 drivers
-v0x22fb3b0_0 .net "y", 15 0, C4<0000000000000011>; 1 drivers
-L_0x22fbe10 .part C4<0000000000000001>, 0, 4;
-L_0x22fbee0 .part C4<0000000000000011>, 0, 4;
-L_0x22fc010 .part C4<0000000000000001>, 4, 4;
-L_0x22fc0e0 .part C4<0000000000000011>, 4, 4;
-L_0x22fc1e0 .part C4<0000000000000001>, 8, 4;
-L_0x22fc340 .part C4<0000000000000011>, 8, 4;
-L_0x22fc4e0 .part C4<0000000000000001>, 12, 4;
-L_0x22fc580 .part C4<0000000000000011>, 12, 4;
-L_0x22fc650 .concat [ 4 4 4 4], v0x22f9aa0_0, v0x22fa000_0, v0x22fa540_0, v0x22faa80_0;
-S_0x22fa710 .scope module, "obj1" "adder4" 2 34, 2 1, S_0x22af0e0;
+v0x27fa070_0 .var "a", 3 0;
+RS_0x7f5c3f3c89c8 .resolv tri, L_0x27fa960, L_0x27fae80, L_0x27fba40, L_0x27fcfe0;
+v0x27fa670_0 .net8 "answer", 3 0, RS_0x7f5c3f3c89c8; 4 drivers
+v0x27fa6f0_0 .var "b", 3 0;
+v0x27fa770_0 .var "c", 0 0;
+v0x27fa7f0_0 .net "d", 0 0, L_0x2802910; 1 drivers
+v0x27fa8a0_0 .var/i "i", 31 0;
+S_0x278c780 .scope module, "adder" "adder4" 2 25, 3 1, S_0x278c690;
  .timescale 0 0;
-P_0x22fa808 .param/l "maxn" 2 2, +C4<0100>;
-v0x22fa910_0 .net "cin", 0 0, C4<0>; 1 drivers
-v0x22fa9d0_0 .var "cout", 0 0;
-v0x22faa80_0 .var "sum", 3 0;
-v0x22fab00_0 .net "x", 3 0, L_0x22fbe10; 1 drivers
-v0x22fabb0_0 .net "y", 3 0, L_0x22fbee0; 1 drivers
-E_0x22fa8c0 .event edge, v0x22fabb0_0, v0x22fab00_0;
-S_0x22fa1d0 .scope module, "obj2" "adder4" 2 35, 2 1, S_0x22af0e0;
- .timescale 0 0;
-P_0x22fa2c8 .param/l "maxn" 2 2, +C4<0100>;
-v0x22fa3d0_0 .alias "cin", 0 0, v0x22fac50_0;
-v0x22fa490_0 .var "cout", 0 0;
-v0x22fa540_0 .var "sum", 3 0;
-v0x22fa5c0_0 .net "x", 3 0, L_0x22fc010; 1 drivers
-v0x22fa670_0 .net "y", 3 0, L_0x22fc0e0; 1 drivers
-E_0x22fa380 .event edge, v0x22fa670_0, v0x22fa5c0_0;
-S_0x22f9c90 .scope module, "obj3" "adder4" 2 36, 2 1, S_0x22af0e0;
- .timescale 0 0;
-P_0x22f9d88 .param/l "maxn" 2 2, +C4<0100>;
-v0x22f9e90_0 .alias "cin", 0 0, v0x22fad40_0;
-v0x22f9f50_0 .var "cout", 0 0;
-v0x22fa000_0 .var "sum", 3 0;
-v0x22fa080_0 .net "x", 3 0, L_0x22fc1e0; 1 drivers
-v0x22fa130_0 .net "y", 3 0, L_0x22fc340; 1 drivers
-E_0x22f9e40 .event edge, v0x22fa130_0, v0x22fa080_0;
-S_0x22d1da0 .scope module, "obj4" "adder4" 2 37, 2 1, S_0x22af0e0;
- .timescale 0 0;
-P_0x22c1e68 .param/l "maxn" 2 2, +C4<0100>;
-v0x22be8d0_0 .alias "cin", 0 0, v0x22fae10_0;
-v0x22f9a00_0 .var "cout", 0 0;
-v0x22f9aa0_0 .var "sum", 3 0;
-v0x22f9b40_0 .net "x", 3 0, L_0x22fc4e0; 1 drivers
-v0x22f9bf0_0 .net "y", 3 0, L_0x22fc580; 1 drivers
-E_0x22aeca0 .event edge, v0x22f9bf0_0, v0x22f9b40_0;
-S_0x22aeea0 .scope module, "test_adder" "test_adder" 3 20;
- .timescale 0 0;
-v0x22fb8e0_0 .var "a", 3 0;
-v0x22fb9b0_0 .net "answer", 3 0, v0x22fb6f0_0; 1 drivers
-v0x22fba60_0 .var "b", 3 0;
-v0x22fbb10_0 .var "c", 0 0;
-v0x22fbbf0_0 .net "d", 0 0, v0x22fb650_0; 1 drivers
-v0x22fbca0_0 .var/i "i", 31 0;
-S_0x22fb430 .scope module, "adder" "adder4" 3 26, 2 1, S_0x22aeea0;
- .timescale 0 0;
-P_0x22fb068 .param/l "maxn" 2 2, +C4<0100>;
-v0x22fb590_0 .net "cin", 0 0, v0x22fbb10_0; 1 drivers
-v0x22fb650_0 .var "cout", 0 0;
-v0x22fb6f0_0 .var "sum", 3 0;
-v0x22fb790_0 .net "x", 3 0, v0x22fb8e0_0; 1 drivers
-v0x22fb840_0 .net "y", 3 0, v0x22fba60_0; 1 drivers
-E_0x22fb560 .event edge, v0x22fb840_0, v0x22fb790_0;
-    .scope S_0x22fa710;
+P_0x27c85d8 .param/l "maxn" 3 2, +C4<0100>;
+L_0x27fac30 .functor XOR 1, L_0x27faa50, L_0x27fab40, C4<0>, C4<0>;
+L_0x27fad30 .functor XOR 1, L_0x27fac30, v0x27fa770_0, C4<0>, C4<0>;
+L_0x27fb060 .functor XOR 1, L_0x27faf20, L_0x27fafc0, C4<0>, C4<0>;
+L_0x27fb3c0 .functor AND 1, L_0x27fb160, L_0x27fb290, C4<1>, C4<1>;
+L_0x27fb610 .functor XOR 1, L_0x27fb470, L_0x27fb510, C4<0>, C4<0>;
+L_0x27fb6f0 .functor AND 1, L_0x27fb610, v0x27fa770_0, C4<1>, C4<1>;
+L_0x27fb7a0 .functor XOR 1, L_0x27fb3c0, L_0x27fb6f0, C4<0>, C4<0>;
+L_0x27fb8a0 .functor XOR 1, L_0x27fb060, L_0x27fb7a0, C4<0>, C4<0>;
+L_0x27fb5b0 .functor XOR 1, L_0x27fbb70, L_0x27fbc80, C4<0>, C4<0>;
+L_0x27fbf30 .functor AND 1, L_0x27fbd70, L_0x27fbe90, C4<1>, C4<1>;
+L_0x27fb330 .functor XOR 1, L_0x27fc090, L_0x27fc240, C4<0>, C4<0>;
+L_0x27fb200 .functor AND 1, L_0x27fc440, L_0x27fc580, C4<1>, C4<1>;
+L_0x27fc030 .functor AND 1, L_0x27fb330, L_0x27fb200, C4<1>, C4<1>;
+L_0x27fc760 .functor XOR 1, L_0x27fbf30, L_0x27fc030, C4<0>, C4<0>;
+L_0x27fc9b0 .functor XOR 1, L_0x27fc860, L_0x27fc4e0, C4<0>, C4<0>;
+L_0x27fcc10 .functor XOR 1, L_0x27fcab0, L_0x27fc900, C4<0>, C4<0>;
+L_0x27fcda0 .functor AND 1, L_0x27fc9b0, L_0x27fcc10, C4<1>, C4<1>;
+L_0x27fcea0 .functor AND 1, L_0x27fcda0, v0x27fa770_0, C4<1>, C4<1>;
+L_0x27fcd10 .functor XOR 1, L_0x27fc760, L_0x27fcea0, C4<0>, C4<0>;
+L_0x27fd0d0 .functor XOR 1, L_0x27fb5b0, L_0x27fcd10, C4<0>, C4<0>;
+L_0x27fd2d0 .functor XOR 1, L_0x27fcb50, L_0x27fd3a0, C4<0>, C4<0>;
+L_0x27fd440 .functor AND 1, L_0x27fd570, L_0x27fd610, C4<1>, C4<1>;
+L_0x27fd6b0 .functor XOR 1, L_0x27fd220, L_0x27fd8b0, C4<0>, C4<0>;
+L_0x27fd950 .functor AND 1, L_0x27fdaa0, L_0x27fdb40, C4<1>, C4<1>;
+L_0x27fd7f0 .functor AND 1, L_0x27fd6b0, L_0x27fd950, C4<1>, C4<1>;
+L_0x27fde10 .functor XOR 1, L_0x27fd440, L_0x27fd7f0, C4<0>, C4<0>;
+L_0x27fc1d0 .functor XOR 1, L_0x27fdcf0, L_0x27fc130, C4<0>, C4<0>;
+L_0x27fc380 .functor XOR 1, L_0x27fdbe0, L_0x27fe530, C4<0>, C4<0>;
+L_0x27fe460 .functor AND 1, L_0x27fc1d0, L_0x27fc380, C4<1>, C4<1>;
+L_0x27fdf60 .functor AND 1, L_0x27fe7f0, L_0x27fe890, C4<1>, C4<1>;
+L_0x27fe670 .functor AND 1, L_0x27fe460, L_0x27fdf60, C4<1>, C4<1>;
+L_0x27fe770 .functor XOR 1, L_0x27fde10, L_0x27fe670, C4<0>, C4<0>;
+L_0x27feb10 .functor XOR 1, L_0x27fea70, L_0x27fed20, C4<0>, C4<0>;
+L_0x27fedc0 .functor XOR 1, L_0x27fe9d0, L_0x27fef10, C4<0>, C4<0>;
+L_0x27fec10 .functor AND 1, L_0x27feb10, L_0x27fedc0, C4<1>, C4<1>;
+L_0x27fecc0 .functor XOR 1, L_0x27ff230, L_0x27ff2d0, C4<0>, C4<0>;
+L_0x27ff050 .functor AND 1, L_0x27fec10, L_0x27fecc0, C4<1>, C4<1>;
+L_0x27ff150 .functor AND 1, L_0x27ff050, v0x27fa770_0, C4<1>, C4<1>;
+L_0x27ff620 .functor XOR 1, L_0x27fe770, L_0x27ff150, C4<0>, C4<0>;
+L_0x27ff720 .functor XOR 1, L_0x27fd2d0, L_0x27ff620, C4<0>, C4<0>;
+L_0x27ff370 .functor AND 1, L_0x27ff4e0, L_0x27ff580, C4<1>, C4<1>;
+L_0x27ff470 .functor XOR 1, L_0x27ffb40, L_0x27ffbe0, C4<0>, C4<0>;
+L_0x27ff910 .functor AND 1, L_0x27ffa60, L_0x27ff870, C4<1>, C4<1>;
+L_0x27ffcd0 .functor AND 1, L_0x27ff470, L_0x27ff910, C4<1>, C4<1>;
+L_0x27ffdd0 .functor XOR 1, L_0x27ff370, L_0x27ffcd0, C4<0>, C4<0>;
+L_0x27fff70 .functor XOR 1, L_0x27ffed0, L_0x2800280, C4<0>, C4<0>;
+L_0x28001b0 .functor XOR 1, L_0x2800070, L_0x2800110, C4<0>, C4<0>;
+L_0x2800370 .functor AND 1, L_0x27fff70, L_0x28001b0, C4<1>, C4<1>;
+L_0x28005b0 .functor AND 1, L_0x2800470, L_0x2800510, C4<1>, C4<1>;
+L_0x28006b0 .functor AND 1, L_0x2800370, L_0x28005b0, C4<1>, C4<1>;
+L_0x28007b0 .functor XOR 1, L_0x27ffdd0, L_0x28006b0, C4<0>, C4<0>;
+L_0x2800950 .functor XOR 1, L_0x28008b0, L_0x2800d10, C4<0>, C4<0>;
+L_0x2800b90 .functor XOR 1, L_0x2800a50, L_0x2800af0, C4<0>, C4<0>;
+L_0x2800c90 .functor AND 1, L_0x2800950, L_0x2800b90, C4<1>, C4<1>;
+L_0x2800f90 .functor XOR 1, L_0x2800e50, L_0x2800ef0, C4<0>, C4<0>;
+L_0x2801090 .functor AND 1, L_0x2800c90, L_0x2800f90, C4<1>, C4<1>;
+L_0x28014f0 .functor AND 1, L_0x2801190, L_0x2801230, C4<1>, C4<1>;
+L_0x28015f0 .functor AND 1, L_0x2801090, L_0x28014f0, C4<1>, C4<1>;
+L_0x28018d0 .functor XOR 1, L_0x28007b0, L_0x28015f0, C4<0>, C4<0>;
+L_0x27f4f00 .functor XOR 1, L_0x28019d0, L_0x27fdfc0, C4<0>, C4<0>;
+L_0x27f5fb0 .functor XOR 1, L_0x27fe2a0, L_0x27fe340, C4<0>, C4<0>;
+L_0x27fbe10 .functor AND 1, L_0x27f4f00, L_0x27f5fb0, C4<1>, C4<1>;
+L_0x27fe0b0 .functor XOR 1, L_0x2801740, L_0x28017e0, C4<0>, C4<0>;
+L_0x27fe160 .functor AND 1, L_0x27fbe10, L_0x27fe0b0, C4<1>, C4<1>;
+L_0x2802290 .functor XOR 1, L_0x28024d0, L_0x2802570, C4<0>, C4<0>;
+L_0x2802390 .functor AND 1, L_0x27fe160, L_0x2802290, C4<1>, C4<1>;
+L_0x2802860 .functor AND 1, L_0x2802390, v0x27fa770_0, C4<1>, C4<1>;
+L_0x2802910 .functor XOR 1, L_0x28018d0, L_0x2802860, C4<0>, C4<0>;
+v0x27d2c40_0 .net *"_s101", 0 0, L_0x27fd220; 1 drivers
+v0x27f48e0_0 .net *"_s103", 0 0, L_0x27fd8b0; 1 drivers
+v0x27f4980_0 .net *"_s104", 0 0, L_0x27fd6b0; 1 drivers
+v0x27f4a20_0 .net *"_s107", 0 0, L_0x27fdaa0; 1 drivers
+v0x27f4ad0_0 .net *"_s109", 0 0, L_0x27fdb40; 1 drivers
+v0x27f4b70_0 .net *"_s110", 0 0, L_0x27fd950; 1 drivers
+v0x27f4c50_0 .net *"_s112", 0 0, L_0x27fd7f0; 1 drivers
+v0x27f4cf0_0 .net *"_s114", 0 0, L_0x27fde10; 1 drivers
+v0x27f4de0_0 .net *"_s117", 0 0, L_0x27fdcf0; 1 drivers
+v0x27f4e80_0 .net *"_s119", 0 0, L_0x27fc130; 1 drivers
+v0x27f4f80_0 .net *"_s120", 0 0, L_0x27fc1d0; 1 drivers
+v0x27f5020_0 .net *"_s123", 0 0, L_0x27fdbe0; 1 drivers
+v0x27f5130_0 .net *"_s125", 0 0, L_0x27fe530; 1 drivers
+v0x27f51d0_0 .net *"_s126", 0 0, L_0x27fc380; 1 drivers
+v0x27f52f0_0 .net *"_s128", 0 0, L_0x27fe460; 1 drivers
+v0x27f5390_0 .net *"_s13", 0 0, L_0x27faf20; 1 drivers
+v0x27f5250_0 .net *"_s131", 0 0, L_0x27fe7f0; 1 drivers
+v0x27f54e0_0 .net *"_s133", 0 0, L_0x27fe890; 1 drivers
+v0x27f5600_0 .net *"_s134", 0 0, L_0x27fdf60; 1 drivers
+v0x27f5680_0 .net *"_s136", 0 0, L_0x27fe670; 1 drivers
+v0x27f5560_0 .net *"_s138", 0 0, L_0x27fe770; 1 drivers
+v0x27f57b0_0 .net *"_s141", 0 0, L_0x27fea70; 1 drivers
+v0x27f5700_0 .net *"_s143", 0 0, L_0x27fed20; 1 drivers
+v0x27f58f0_0 .net *"_s144", 0 0, L_0x27feb10; 1 drivers
+v0x27f5850_0 .net *"_s147", 0 0, L_0x27fe9d0; 1 drivers
+v0x27f5a40_0 .net *"_s149", 0 0, L_0x27fef10; 1 drivers
+v0x27f5990_0 .net *"_s15", 0 0, L_0x27fafc0; 1 drivers
+v0x27f5ba0_0 .net *"_s150", 0 0, L_0x27fedc0; 1 drivers
+v0x27f5ae0_0 .net *"_s152", 0 0, L_0x27fec10; 1 drivers
+v0x27f5d10_0 .net *"_s155", 0 0, L_0x27ff230; 1 drivers
+v0x27f5c20_0 .net *"_s157", 0 0, L_0x27ff2d0; 1 drivers
+v0x27f5e90_0 .net *"_s158", 0 0, L_0x27fecc0; 1 drivers
+v0x27f5d90_0 .net *"_s16", 0 0, L_0x27fb060; 1 drivers
+v0x27f6020_0 .net *"_s160", 0 0, L_0x27ff050; 1 drivers
+v0x27f5f10_0 .net *"_s162", 0 0, L_0x27ff150; 1 drivers
+v0x27f61c0_0 .net *"_s164", 0 0, L_0x27ff620; 1 drivers
+v0x27f60a0_0 .net *"_s166", 0 0, L_0x27ff720; 1 drivers
+v0x27f6140_0 .net *"_s169", 0 0, L_0x27ff4e0; 1 drivers
+v0x27f6380_0 .net *"_s171", 0 0, L_0x27ff580; 1 drivers
+v0x27f6400_0 .net *"_s172", 0 0, L_0x27ff370; 1 drivers
+v0x27f6240_0 .net *"_s175", 0 0, L_0x27ffb40; 1 drivers
+v0x27f62e0_0 .net *"_s177", 0 0, L_0x27ffbe0; 1 drivers
+v0x27f65e0_0 .net *"_s178", 0 0, L_0x27ff470; 1 drivers
+v0x27f6660_0 .net *"_s181", 0 0, L_0x27ffa60; 1 drivers
+v0x27f6480_0 .net *"_s183", 0 0, L_0x27ff870; 1 drivers
+v0x27f6520_0 .net *"_s184", 0 0, L_0x27ff910; 1 drivers
+v0x27f6860_0 .net *"_s186", 0 0, L_0x27ffcd0; 1 drivers
+v0x27f68e0_0 .net *"_s188", 0 0, L_0x27ffdd0; 1 drivers
+v0x27f6700_0 .net *"_s19", 0 0, L_0x27fb160; 1 drivers
+v0x27f67a0_0 .net *"_s191", 0 0, L_0x27ffed0; 1 drivers
+v0x27f6b00_0 .net *"_s193", 0 0, L_0x2800280; 1 drivers
+v0x27f6b80_0 .net *"_s194", 0 0, L_0x27fff70; 1 drivers
+v0x27f6980_0 .net *"_s197", 0 0, L_0x2800070; 1 drivers
+v0x27f6a20_0 .net *"_s199", 0 0, L_0x2800110; 1 drivers
+v0x27f6dc0_0 .net *"_s200", 0 0, L_0x28001b0; 1 drivers
+v0x27f6e40_0 .net *"_s202", 0 0, L_0x2800370; 1 drivers
+v0x27f6c00_0 .net *"_s205", 0 0, L_0x2800470; 1 drivers
+v0x27f6ca0_0 .net *"_s207", 0 0, L_0x2800510; 1 drivers
+v0x27f6d40_0 .net *"_s208", 0 0, L_0x28005b0; 1 drivers
+v0x27f70c0_0 .net *"_s21", 0 0, L_0x27fb290; 1 drivers
+v0x27f6ee0_0 .net *"_s210", 0 0, L_0x28006b0; 1 drivers
+v0x27f6f80_0 .net *"_s212", 0 0, L_0x28007b0; 1 drivers
+v0x27f7020_0 .net *"_s215", 0 0, L_0x28008b0; 1 drivers
+v0x27f7360_0 .net *"_s217", 0 0, L_0x2800d10; 1 drivers
+v0x27f7160_0 .net *"_s218", 0 0, L_0x2800950; 1 drivers
+v0x27f7200_0 .net *"_s22", 0 0, L_0x27fb3c0; 1 drivers
+v0x27f72a0_0 .net *"_s221", 0 0, L_0x2800a50; 1 drivers
+v0x27f7600_0 .net *"_s223", 0 0, L_0x2800af0; 1 drivers
+v0x27f7400_0 .net *"_s224", 0 0, L_0x2800b90; 1 drivers
+v0x27f74a0_0 .net *"_s226", 0 0, L_0x2800c90; 1 drivers
+v0x27f7540_0 .net *"_s229", 0 0, L_0x2800e50; 1 drivers
+v0x27f78c0_0 .net *"_s231", 0 0, L_0x2800ef0; 1 drivers
+v0x27f7680_0 .net *"_s232", 0 0, L_0x2800f90; 1 drivers
+v0x27f7720_0 .net *"_s234", 0 0, L_0x2801090; 1 drivers
+v0x27f77c0_0 .net *"_s237", 0 0, L_0x2801190; 1 drivers
+v0x27f7ba0_0 .net *"_s239", 0 0, L_0x2801230; 1 drivers
+v0x27f7940_0 .net *"_s240", 0 0, L_0x28014f0; 1 drivers
+v0x27f79e0_0 .net *"_s242", 0 0, L_0x28015f0; 1 drivers
+v0x27f7a80_0 .net *"_s244", 0 0, L_0x28018d0; 1 drivers
+v0x27f7b20_0 .net *"_s247", 0 0, L_0x28019d0; 1 drivers
+v0x27f7eb0_0 .net *"_s249", 0 0, L_0x27fdfc0; 1 drivers
+v0x27f7f30_0 .net *"_s25", 0 0, L_0x27fb470; 1 drivers
+v0x27f7c40_0 .net *"_s250", 0 0, L_0x27f4f00; 1 drivers
+v0x27f7ce0_0 .net *"_s253", 0 0, L_0x27fe2a0; 1 drivers
+v0x27f7d80_0 .net *"_s255", 0 0, L_0x27fe340; 1 drivers
+v0x27f7e20_0 .net *"_s256", 0 0, L_0x27f5fb0; 1 drivers
+v0x27f8290_0 .net *"_s258", 0 0, L_0x27fbe10; 1 drivers
+v0x27f8330_0 .net *"_s261", 0 0, L_0x2801740; 1 drivers
+v0x27f7fd0_0 .net *"_s263", 0 0, L_0x28017e0; 1 drivers
+v0x27f8070_0 .net *"_s264", 0 0, L_0x27fe0b0; 1 drivers
+v0x27f8110_0 .net *"_s266", 0 0, L_0x27fe160; 1 drivers
+v0x27f81b0_0 .net *"_s269", 0 0, L_0x28024d0; 1 drivers
+v0x27f86a0_0 .net *"_s27", 0 0, L_0x27fb510; 1 drivers
+v0x27f8720_0 .net *"_s271", 0 0, L_0x2802570; 1 drivers
+v0x27f83d0_0 .net *"_s272", 0 0, L_0x2802290; 1 drivers
+v0x27f8470_0 .net *"_s274", 0 0, L_0x2802390; 1 drivers
+v0x27f8510_0 .net *"_s276", 0 0, L_0x2802860; 1 drivers
+v0x27f85b0_0 .net *"_s28", 0 0, L_0x27fb610; 1 drivers
+v0x27f8ac0_0 .net *"_s3", 0 0, L_0x27faa50; 1 drivers
+v0x27f8b40_0 .net *"_s30", 0 0, L_0x27fb6f0; 1 drivers
+v0x27f87a0_0 .net *"_s32", 0 0, L_0x27fb7a0; 1 drivers
+v0x27f8840_0 .net *"_s34", 0 0, L_0x27fb8a0; 1 drivers
+v0x27f88e0_0 .net *"_s39", 0 0, L_0x27fbb70; 1 drivers
+v0x27f8980_0 .net *"_s41", 0 0, L_0x27fbc80; 1 drivers
+v0x27f8a20_0 .net *"_s42", 0 0, L_0x27fb5b0; 1 drivers
+v0x27f8f10_0 .net *"_s45", 0 0, L_0x27fbd70; 1 drivers
+v0x27f8be0_0 .net *"_s47", 0 0, L_0x27fbe90; 1 drivers
+v0x27f8c80_0 .net *"_s48", 0 0, L_0x27fbf30; 1 drivers
+v0x27f8d20_0 .net *"_s5", 0 0, L_0x27fab40; 1 drivers
+v0x27f8dc0_0 .net *"_s51", 0 0, L_0x27fc090; 1 drivers
+v0x27f8e60_0 .net *"_s53", 0 0, L_0x27fc240; 1 drivers
+v0x27f9310_0 .net *"_s54", 0 0, L_0x27fb330; 1 drivers
+v0x27f8fb0_0 .net *"_s57", 0 0, L_0x27fc440; 1 drivers
+v0x27f9050_0 .net *"_s59", 0 0, L_0x27fc580; 1 drivers
+v0x27f90f0_0 .net *"_s6", 0 0, L_0x27fac30; 1 drivers
+v0x27f9190_0 .net *"_s60", 0 0, L_0x27fb200; 1 drivers
+v0x27f9230_0 .net *"_s62", 0 0, L_0x27fc030; 1 drivers
+v0x27f9740_0 .net *"_s64", 0 0, L_0x27fc760; 1 drivers
+v0x27f9390_0 .net *"_s67", 0 0, L_0x27fc860; 1 drivers
+v0x27f9410_0 .net *"_s69", 0 0, L_0x27fc4e0; 1 drivers
+v0x27f94b0_0 .net *"_s70", 0 0, L_0x27fc9b0; 1 drivers
+v0x27f9550_0 .net *"_s73", 0 0, L_0x27fcab0; 1 drivers
+v0x27f95f0_0 .net *"_s75", 0 0, L_0x27fc900; 1 drivers
+v0x27f9690_0 .net *"_s76", 0 0, L_0x27fcc10; 1 drivers
+v0x27f9bb0_0 .net *"_s78", 0 0, L_0x27fcda0; 1 drivers
+v0x27f9c50_0 .net *"_s8", 0 0, L_0x27fad30; 1 drivers
+v0x27f97c0_0 .net *"_s80", 0 0, L_0x27fcea0; 1 drivers
+v0x27f9860_0 .net *"_s82", 0 0, L_0x27fcd10; 1 drivers
+v0x27f9900_0 .net *"_s84", 0 0, L_0x27fd0d0; 1 drivers
+v0x27f99a0_0 .net *"_s89", 0 0, L_0x27fcb50; 1 drivers
+v0x27f9a40_0 .net *"_s91", 0 0, L_0x27fd3a0; 1 drivers
+v0x27f9ae0_0 .net *"_s92", 0 0, L_0x27fd2d0; 1 drivers
+v0x27fa100_0 .net *"_s95", 0 0, L_0x27fd570; 1 drivers
+v0x27fa180_0 .net *"_s97", 0 0, L_0x27fd610; 1 drivers
+v0x27f9cd0_0 .net *"_s98", 0 0, L_0x27fd440; 1 drivers
+v0x27f9d50_0 .net "cin", 0 0, v0x27fa770_0; 1 drivers
+v0x27f9df0_0 .alias "cout", 0 0, v0x27fa7f0_0;
+v0x27f9e90_0 .alias "sum", 3 0, v0x27fa670_0;
+v0x27f9f30_0 .net "x", 3 0, v0x27fa070_0; 1 drivers
+v0x27f9fd0_0 .net "y", 3 0, v0x27fa6f0_0; 1 drivers
+L_0x27fa960 .part/pv L_0x27fad30, 0, 1, 4;
+L_0x27faa50 .part v0x27fa070_0, 0, 1;
+L_0x27fab40 .part v0x27fa6f0_0, 0, 1;
+L_0x27fae80 .part/pv L_0x27fb8a0, 1, 1, 4;
+L_0x27faf20 .part v0x27fa070_0, 1, 1;
+L_0x27fafc0 .part v0x27fa6f0_0, 1, 1;
+L_0x27fb160 .part v0x27fa070_0, 0, 1;
+L_0x27fb290 .part v0x27fa6f0_0, 0, 1;
+L_0x27fb470 .part v0x27fa070_0, 0, 1;
+L_0x27fb510 .part v0x27fa6f0_0, 0, 1;
+L_0x27fba40 .part/pv L_0x27fd0d0, 2, 1, 4;
+L_0x27fbb70 .part v0x27fa070_0, 2, 1;
+L_0x27fbc80 .part v0x27fa6f0_0, 2, 1;
+L_0x27fbd70 .part v0x27fa070_0, 1, 1;
+L_0x27fbe90 .part v0x27fa6f0_0, 1, 1;
+L_0x27fc090 .part v0x27fa070_0, 1, 1;
+L_0x27fc240 .part v0x27fa6f0_0, 1, 1;
+L_0x27fc440 .part v0x27fa070_0, 0, 1;
+L_0x27fc580 .part v0x27fa6f0_0, 0, 1;
+L_0x27fc860 .part v0x27fa070_0, 1, 1;
+L_0x27fc4e0 .part v0x27fa6f0_0, 1, 1;
+L_0x27fcab0 .part v0x27fa070_0, 0, 1;
+L_0x27fc900 .part v0x27fa6f0_0, 0, 1;
+L_0x27fcfe0 .part/pv L_0x27ff720, 3, 1, 4;
+L_0x27fcb50 .part v0x27fa070_0, 3, 1;
+L_0x27fd3a0 .part v0x27fa6f0_0, 3, 1;
+L_0x27fd570 .part v0x27fa070_0, 2, 1;
+L_0x27fd610 .part v0x27fa6f0_0, 2, 1;
+L_0x27fd220 .part v0x27fa070_0, 2, 1;
+L_0x27fd8b0 .part v0x27fa6f0_0, 2, 1;
+L_0x27fdaa0 .part v0x27fa070_0, 1, 1;
+L_0x27fdb40 .part v0x27fa6f0_0, 1, 1;
+L_0x27fdcf0 .part v0x27fa070_0, 2, 1;
+L_0x27fc130 .part v0x27fa6f0_0, 2, 1;
+L_0x27fdbe0 .part v0x27fa070_0, 1, 1;
+L_0x27fe530 .part v0x27fa6f0_0, 1, 1;
+L_0x27fe7f0 .part v0x27fa070_0, 0, 1;
+L_0x27fe890 .part v0x27fa6f0_0, 0, 1;
+L_0x27fea70 .part v0x27fa070_0, 2, 1;
+L_0x27fed20 .part v0x27fa6f0_0, 2, 1;
+L_0x27fe9d0 .part v0x27fa070_0, 1, 1;
+L_0x27fef10 .part v0x27fa6f0_0, 1, 1;
+L_0x27ff230 .part v0x27fa070_0, 0, 1;
+L_0x27ff2d0 .part v0x27fa6f0_0, 0, 1;
+L_0x27ff4e0 .part v0x27fa070_0, 3, 1;
+L_0x27ff580 .part v0x27fa6f0_0, 3, 1;
+L_0x27ffb40 .part v0x27fa070_0, 3, 1;
+L_0x27ffbe0 .part v0x27fa6f0_0, 3, 1;
+L_0x27ffa60 .part v0x27fa070_0, 2, 1;
+L_0x27ff870 .part v0x27fa6f0_0, 2, 1;
+L_0x27ffed0 .part v0x27fa070_0, 3, 1;
+L_0x2800280 .part v0x27fa6f0_0, 3, 1;
+L_0x2800070 .part v0x27fa070_0, 2, 1;
+L_0x2800110 .part v0x27fa6f0_0, 2, 1;
+L_0x2800470 .part v0x27fa070_0, 1, 1;
+L_0x2800510 .part v0x27fa6f0_0, 1, 1;
+L_0x28008b0 .part v0x27fa070_0, 3, 1;
+L_0x2800d10 .part v0x27fa6f0_0, 3, 1;
+L_0x2800a50 .part v0x27fa070_0, 2, 1;
+L_0x2800af0 .part v0x27fa6f0_0, 2, 1;
+L_0x2800e50 .part v0x27fa070_0, 1, 1;
+L_0x2800ef0 .part v0x27fa6f0_0, 1, 1;
+L_0x2801190 .part v0x27fa070_0, 0, 1;
+L_0x2801230 .part v0x27fa6f0_0, 0, 1;
+L_0x28019d0 .part v0x27fa070_0, 3, 1;
+L_0x27fdfc0 .part v0x27fa6f0_0, 3, 1;
+L_0x27fe2a0 .part v0x27fa070_0, 2, 1;
+L_0x27fe340 .part v0x27fa6f0_0, 2, 1;
+L_0x2801740 .part v0x27fa070_0, 1, 1;
+L_0x28017e0 .part v0x27fa6f0_0, 1, 1;
+L_0x28024d0 .part v0x27fa070_0, 0, 1;
+L_0x2802570 .part v0x27fa6f0_0, 0, 1;
+    .scope S_0x278c690;
 T_0 ;
-    %wait E_0x22fa8c0;
-    %load/v 8, v0x22fab00_0, 1; Only need 1 of 4 bits
-; Save base=8 wid=1 in lookaside.
-    %load/v 9, v0x22fabb0_0, 1; Only need 1 of 4 bits
-; Save base=9 wid=1 in lookaside.
-    %xor 8, 9, 1;
-    %load/v 9, v0x22fa910_0, 1;
-    %xor 8, 9, 1;
-    %ix/load 0, 0, 0;
-    %set/x0 v0x22faa80_0, 8, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.0, 4;
-    %load/x1p 8, v0x22fab00_0, 1;
-    %jmp T_0.1;
-T_0.0 ;
-    %mov 8, 2, 1;
-T_0.1 ;
-; Save base=8 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.2, 4;
-    %load/x1p 9, v0x22fabb0_0, 1;
-    %jmp T_0.3;
-T_0.2 ;
-    %mov 9, 2, 1;
-T_0.3 ;
-; Save base=9 wid=1 in lookaside.
-    %xor 8, 9, 1;
-    %load/v 9, v0x22fab00_0, 1; Only need 1 of 4 bits
-; Save base=9 wid=1 in lookaside.
-    %load/v 10, v0x22fabb0_0, 1; Only need 1 of 4 bits
-; Save base=10 wid=1 in lookaside.
-    %and 9, 10, 1;
-    %load/v 10, v0x22fab00_0, 1; Only need 1 of 4 bits
-; Save base=10 wid=1 in lookaside.
-    %load/v 11, v0x22fabb0_0, 1; Only need 1 of 4 bits
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %load/v 11, v0x22fa910_0, 1;
-    %and 10, 11, 1;
-    %xor 9, 10, 1;
-    %xor 8, 9, 1;
-    %ix/load 0, 1, 0;
-    %set/x0 v0x22faa80_0, 8, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.4, 4;
-    %load/x1p 8, v0x22fab00_0, 1;
-    %jmp T_0.5;
-T_0.4 ;
-    %mov 8, 2, 1;
-T_0.5 ;
-; Save base=8 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.6, 4;
-    %load/x1p 9, v0x22fabb0_0, 1;
-    %jmp T_0.7;
-T_0.6 ;
-    %mov 9, 2, 1;
-T_0.7 ;
-; Save base=9 wid=1 in lookaside.
-    %xor 8, 9, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.8, 4;
-    %load/x1p 9, v0x22fab00_0, 1;
-    %jmp T_0.9;
-T_0.8 ;
-    %mov 9, 2, 1;
-T_0.9 ;
-; Save base=9 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.10, 4;
-    %load/x1p 10, v0x22fabb0_0, 1;
-    %jmp T_0.11;
-T_0.10 ;
-    %mov 10, 2, 1;
-T_0.11 ;
-; Save base=10 wid=1 in lookaside.
-    %and 9, 10, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.12, 4;
-    %load/x1p 10, v0x22fab00_0, 1;
-    %jmp T_0.13;
-T_0.12 ;
-    %mov 10, 2, 1;
-T_0.13 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.14, 4;
-    %load/x1p 11, v0x22fabb0_0, 1;
-    %jmp T_0.15;
-T_0.14 ;
-    %mov 11, 2, 1;
-T_0.15 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %load/v 11, v0x22fab00_0, 1; Only need 1 of 4 bits
-; Save base=11 wid=1 in lookaside.
-    %load/v 12, v0x22fabb0_0, 1; Only need 1 of 4 bits
-; Save base=12 wid=1 in lookaside.
-    %and 11, 12, 1;
-    %and 10, 11, 1;
-    %xor 9, 10, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.16, 4;
-    %load/x1p 10, v0x22fab00_0, 1;
-    %jmp T_0.17;
-T_0.16 ;
-    %mov 10, 2, 1;
-T_0.17 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.18, 4;
-    %load/x1p 11, v0x22fabb0_0, 1;
-    %jmp T_0.19;
-T_0.18 ;
-    %mov 11, 2, 1;
-T_0.19 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %load/v 11, v0x22fab00_0, 1; Only need 1 of 4 bits
-; Save base=11 wid=1 in lookaside.
-    %load/v 12, v0x22fabb0_0, 1; Only need 1 of 4 bits
-; Save base=12 wid=1 in lookaside.
-    %xor 11, 12, 1;
-    %and 10, 11, 1;
-    %load/v 11, v0x22fa910_0, 1;
-    %and 10, 11, 1;
-    %xor 9, 10, 1;
-    %xor 8, 9, 1;
-    %ix/load 0, 2, 0;
-    %set/x0 v0x22faa80_0, 8, 1;
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.20, 4;
-    %load/x1p 8, v0x22fab00_0, 1;
-    %jmp T_0.21;
-T_0.20 ;
-    %mov 8, 2, 1;
-T_0.21 ;
-; Save base=8 wid=1 in lookaside.
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.22, 4;
-    %load/x1p 9, v0x22fabb0_0, 1;
-    %jmp T_0.23;
-T_0.22 ;
-    %mov 9, 2, 1;
-T_0.23 ;
-; Save base=9 wid=1 in lookaside.
-    %xor 8, 9, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.24, 4;
-    %load/x1p 9, v0x22fab00_0, 1;
-    %jmp T_0.25;
-T_0.24 ;
-    %mov 9, 2, 1;
-T_0.25 ;
-; Save base=9 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.26, 4;
-    %load/x1p 10, v0x22fabb0_0, 1;
-    %jmp T_0.27;
-T_0.26 ;
-    %mov 10, 2, 1;
-T_0.27 ;
-; Save base=10 wid=1 in lookaside.
-    %and 9, 10, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.28, 4;
-    %load/x1p 10, v0x22fab00_0, 1;
-    %jmp T_0.29;
-T_0.28 ;
-    %mov 10, 2, 1;
-T_0.29 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.30, 4;
-    %load/x1p 11, v0x22fabb0_0, 1;
-    %jmp T_0.31;
-T_0.30 ;
-    %mov 11, 2, 1;
-T_0.31 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.32, 4;
-    %load/x1p 11, v0x22fab00_0, 1;
-    %jmp T_0.33;
-T_0.32 ;
-    %mov 11, 2, 1;
-T_0.33 ;
-; Save base=11 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.34, 4;
-    %load/x1p 12, v0x22fabb0_0, 1;
-    %jmp T_0.35;
-T_0.34 ;
-    %mov 12, 2, 1;
-T_0.35 ;
-; Save base=12 wid=1 in lookaside.
-    %and 11, 12, 1;
-    %and 10, 11, 1;
-    %xor 9, 10, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.36, 4;
-    %load/x1p 10, v0x22fab00_0, 1;
-    %jmp T_0.37;
-T_0.36 ;
-    %mov 10, 2, 1;
-T_0.37 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.38, 4;
-    %load/x1p 11, v0x22fabb0_0, 1;
-    %jmp T_0.39;
-T_0.38 ;
-    %mov 11, 2, 1;
-T_0.39 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.40, 4;
-    %load/x1p 11, v0x22fab00_0, 1;
-    %jmp T_0.41;
-T_0.40 ;
-    %mov 11, 2, 1;
-T_0.41 ;
-; Save base=11 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.42, 4;
-    %load/x1p 12, v0x22fabb0_0, 1;
-    %jmp T_0.43;
-T_0.42 ;
-    %mov 12, 2, 1;
-T_0.43 ;
-; Save base=12 wid=1 in lookaside.
-    %xor 11, 12, 1;
-    %and 10, 11, 1;
-    %load/v 11, v0x22fab00_0, 1; Only need 1 of 4 bits
-; Save base=11 wid=1 in lookaside.
-    %load/v 12, v0x22fabb0_0, 1; Only need 1 of 4 bits
-; Save base=12 wid=1 in lookaside.
-    %and 11, 12, 1;
-    %and 10, 11, 1;
-    %xor 9, 10, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.44, 4;
-    %load/x1p 10, v0x22fab00_0, 1;
-    %jmp T_0.45;
-T_0.44 ;
-    %mov 10, 2, 1;
-T_0.45 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.46, 4;
-    %load/x1p 11, v0x22fabb0_0, 1;
-    %jmp T_0.47;
-T_0.46 ;
-    %mov 11, 2, 1;
-T_0.47 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.48, 4;
-    %load/x1p 11, v0x22fab00_0, 1;
-    %jmp T_0.49;
-T_0.48 ;
-    %mov 11, 2, 1;
-T_0.49 ;
-; Save base=11 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.50, 4;
-    %load/x1p 12, v0x22fabb0_0, 1;
-    %jmp T_0.51;
-T_0.50 ;
-    %mov 12, 2, 1;
-T_0.51 ;
-; Save base=12 wid=1 in lookaside.
-    %xor 11, 12, 1;
-    %and 10, 11, 1;
-    %load/v 11, v0x22fab00_0, 1; Only need 1 of 4 bits
-; Save base=11 wid=1 in lookaside.
-    %load/v 12, v0x22fabb0_0, 1; Only need 1 of 4 bits
-; Save base=12 wid=1 in lookaside.
-    %xor 11, 12, 1;
-    %and 10, 11, 1;
-    %load/v 11, v0x22fa910_0, 1;
-    %and 10, 11, 1;
-    %xor 9, 10, 1;
-    %xor 8, 9, 1;
-    %ix/load 0, 3, 0;
-    %set/x0 v0x22faa80_0, 8, 1;
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.52, 4;
-    %load/x1p 8, v0x22fab00_0, 1;
-    %jmp T_0.53;
-T_0.52 ;
-    %mov 8, 2, 1;
-T_0.53 ;
-; Save base=8 wid=1 in lookaside.
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.54, 4;
-    %load/x1p 9, v0x22fabb0_0, 1;
-    %jmp T_0.55;
-T_0.54 ;
-    %mov 9, 2, 1;
-T_0.55 ;
-; Save base=9 wid=1 in lookaside.
-    %and 8, 9, 1;
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.56, 4;
-    %load/x1p 9, v0x22fab00_0, 1;
-    %jmp T_0.57;
-T_0.56 ;
-    %mov 9, 2, 1;
-T_0.57 ;
-; Save base=9 wid=1 in lookaside.
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.58, 4;
-    %load/x1p 10, v0x22fabb0_0, 1;
-    %jmp T_0.59;
-T_0.58 ;
-    %mov 10, 2, 1;
-T_0.59 ;
-; Save base=10 wid=1 in lookaside.
-    %xor 9, 10, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.60, 4;
-    %load/x1p 10, v0x22fab00_0, 1;
-    %jmp T_0.61;
-T_0.60 ;
-    %mov 10, 2, 1;
-T_0.61 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.62, 4;
-    %load/x1p 11, v0x22fabb0_0, 1;
-    %jmp T_0.63;
-T_0.62 ;
-    %mov 11, 2, 1;
-T_0.63 ;
-; Save base=11 wid=1 in lookaside.
-    %and 10, 11, 1;
-    %and 9, 10, 1;
-    %xor 8, 9, 1;
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.64, 4;
-    %load/x1p 9, v0x22fab00_0, 1;
-    %jmp T_0.65;
-T_0.64 ;
-    %mov 9, 2, 1;
-T_0.65 ;
-; Save base=9 wid=1 in lookaside.
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.66, 4;
-    %load/x1p 10, v0x22fabb0_0, 1;
-    %jmp T_0.67;
-T_0.66 ;
-    %mov 10, 2, 1;
-T_0.67 ;
-; Save base=10 wid=1 in lookaside.
-    %xor 9, 10, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.68, 4;
-    %load/x1p 10, v0x22fab00_0, 1;
-    %jmp T_0.69;
-T_0.68 ;
-    %mov 10, 2, 1;
-T_0.69 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.70, 4;
-    %load/x1p 11, v0x22fabb0_0, 1;
-    %jmp T_0.71;
-T_0.70 ;
-    %mov 11, 2, 1;
-T_0.71 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %and 9, 10, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.72, 4;
-    %load/x1p 10, v0x22fab00_0, 1;
-    %jmp T_0.73;
-T_0.72 ;
-    %mov 10, 2, 1;
-T_0.73 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.74, 4;
-    %load/x1p 11, v0x22fabb0_0, 1;
-    %jmp T_0.75;
-T_0.74 ;
-    %mov 11, 2, 1;
-T_0.75 ;
-; Save base=11 wid=1 in lookaside.
-    %and 10, 11, 1;
-    %and 9, 10, 1;
-    %xor 8, 9, 1;
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.76, 4;
-    %load/x1p 9, v0x22fab00_0, 1;
-    %jmp T_0.77;
-T_0.76 ;
-    %mov 9, 2, 1;
-T_0.77 ;
-; Save base=9 wid=1 in lookaside.
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.78, 4;
-    %load/x1p 10, v0x22fabb0_0, 1;
-    %jmp T_0.79;
-T_0.78 ;
-    %mov 10, 2, 1;
-T_0.79 ;
-; Save base=10 wid=1 in lookaside.
-    %xor 9, 10, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.80, 4;
-    %load/x1p 10, v0x22fab00_0, 1;
-    %jmp T_0.81;
-T_0.80 ;
-    %mov 10, 2, 1;
-T_0.81 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.82, 4;
-    %load/x1p 11, v0x22fabb0_0, 1;
-    %jmp T_0.83;
-T_0.82 ;
-    %mov 11, 2, 1;
-T_0.83 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %and 9, 10, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.84, 4;
-    %load/x1p 10, v0x22fab00_0, 1;
-    %jmp T_0.85;
-T_0.84 ;
-    %mov 10, 2, 1;
-T_0.85 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.86, 4;
-    %load/x1p 11, v0x22fabb0_0, 1;
-    %jmp T_0.87;
-T_0.86 ;
-    %mov 11, 2, 1;
-T_0.87 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %and 9, 10, 1;
-    %load/v 10, v0x22fab00_0, 1; Only need 1 of 4 bits
-; Save base=10 wid=1 in lookaside.
-    %load/v 11, v0x22fabb0_0, 1; Only need 1 of 4 bits
-; Save base=11 wid=1 in lookaside.
-    %and 10, 11, 1;
-    %and 9, 10, 1;
-    %xor 8, 9, 1;
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.88, 4;
-    %load/x1p 9, v0x22fab00_0, 1;
-    %jmp T_0.89;
-T_0.88 ;
-    %mov 9, 2, 1;
-T_0.89 ;
-; Save base=9 wid=1 in lookaside.
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.90, 4;
-    %load/x1p 10, v0x22fabb0_0, 1;
-    %jmp T_0.91;
-T_0.90 ;
-    %mov 10, 2, 1;
-T_0.91 ;
-; Save base=10 wid=1 in lookaside.
-    %xor 9, 10, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.92, 4;
-    %load/x1p 10, v0x22fab00_0, 1;
-    %jmp T_0.93;
-T_0.92 ;
-    %mov 10, 2, 1;
-T_0.93 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.94, 4;
-    %load/x1p 11, v0x22fabb0_0, 1;
-    %jmp T_0.95;
-T_0.94 ;
-    %mov 11, 2, 1;
-T_0.95 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %and 9, 10, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.96, 4;
-    %load/x1p 10, v0x22fab00_0, 1;
-    %jmp T_0.97;
-T_0.96 ;
-    %mov 10, 2, 1;
-T_0.97 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_0.98, 4;
-    %load/x1p 11, v0x22fabb0_0, 1;
-    %jmp T_0.99;
-T_0.98 ;
-    %mov 11, 2, 1;
-T_0.99 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %and 9, 10, 1;
-    %load/v 10, v0x22fab00_0, 1; Only need 1 of 4 bits
-; Save base=10 wid=1 in lookaside.
-    %load/v 11, v0x22fabb0_0, 1; Only need 1 of 4 bits
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %and 9, 10, 1;
-    %load/v 10, v0x22fa910_0, 1;
-    %and 9, 10, 1;
-    %xor 8, 9, 1;
-    %set/v v0x22fa9d0_0, 8, 1;
-    %jmp T_0;
-    .thread T_0, $push;
-    .scope S_0x22fa1d0;
-T_1 ;
-    %wait E_0x22fa380;
-    %load/v 8, v0x22fa5c0_0, 1; Only need 1 of 4 bits
-; Save base=8 wid=1 in lookaside.
-    %load/v 9, v0x22fa670_0, 1; Only need 1 of 4 bits
-; Save base=9 wid=1 in lookaside.
-    %xor 8, 9, 1;
-    %load/v 9, v0x22fa3d0_0, 1;
-    %xor 8, 9, 1;
-    %ix/load 0, 0, 0;
-    %set/x0 v0x22fa540_0, 8, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.0, 4;
-    %load/x1p 8, v0x22fa5c0_0, 1;
-    %jmp T_1.1;
-T_1.0 ;
-    %mov 8, 2, 1;
-T_1.1 ;
-; Save base=8 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.2, 4;
-    %load/x1p 9, v0x22fa670_0, 1;
-    %jmp T_1.3;
-T_1.2 ;
-    %mov 9, 2, 1;
-T_1.3 ;
-; Save base=9 wid=1 in lookaside.
-    %xor 8, 9, 1;
-    %load/v 9, v0x22fa5c0_0, 1; Only need 1 of 4 bits
-; Save base=9 wid=1 in lookaside.
-    %load/v 10, v0x22fa670_0, 1; Only need 1 of 4 bits
-; Save base=10 wid=1 in lookaside.
-    %and 9, 10, 1;
-    %load/v 10, v0x22fa5c0_0, 1; Only need 1 of 4 bits
-; Save base=10 wid=1 in lookaside.
-    %load/v 11, v0x22fa670_0, 1; Only need 1 of 4 bits
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %load/v 11, v0x22fa3d0_0, 1;
-    %and 10, 11, 1;
-    %xor 9, 10, 1;
-    %xor 8, 9, 1;
-    %ix/load 0, 1, 0;
-    %set/x0 v0x22fa540_0, 8, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.4, 4;
-    %load/x1p 8, v0x22fa5c0_0, 1;
-    %jmp T_1.5;
-T_1.4 ;
-    %mov 8, 2, 1;
-T_1.5 ;
-; Save base=8 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.6, 4;
-    %load/x1p 9, v0x22fa670_0, 1;
-    %jmp T_1.7;
-T_1.6 ;
-    %mov 9, 2, 1;
-T_1.7 ;
-; Save base=9 wid=1 in lookaside.
-    %xor 8, 9, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.8, 4;
-    %load/x1p 9, v0x22fa5c0_0, 1;
-    %jmp T_1.9;
-T_1.8 ;
-    %mov 9, 2, 1;
-T_1.9 ;
-; Save base=9 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.10, 4;
-    %load/x1p 10, v0x22fa670_0, 1;
-    %jmp T_1.11;
-T_1.10 ;
-    %mov 10, 2, 1;
-T_1.11 ;
-; Save base=10 wid=1 in lookaside.
-    %and 9, 10, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.12, 4;
-    %load/x1p 10, v0x22fa5c0_0, 1;
-    %jmp T_1.13;
-T_1.12 ;
-    %mov 10, 2, 1;
-T_1.13 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.14, 4;
-    %load/x1p 11, v0x22fa670_0, 1;
-    %jmp T_1.15;
-T_1.14 ;
-    %mov 11, 2, 1;
-T_1.15 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %load/v 11, v0x22fa5c0_0, 1; Only need 1 of 4 bits
-; Save base=11 wid=1 in lookaside.
-    %load/v 12, v0x22fa670_0, 1; Only need 1 of 4 bits
-; Save base=12 wid=1 in lookaside.
-    %and 11, 12, 1;
-    %and 10, 11, 1;
-    %xor 9, 10, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.16, 4;
-    %load/x1p 10, v0x22fa5c0_0, 1;
-    %jmp T_1.17;
-T_1.16 ;
-    %mov 10, 2, 1;
-T_1.17 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.18, 4;
-    %load/x1p 11, v0x22fa670_0, 1;
-    %jmp T_1.19;
-T_1.18 ;
-    %mov 11, 2, 1;
-T_1.19 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %load/v 11, v0x22fa5c0_0, 1; Only need 1 of 4 bits
-; Save base=11 wid=1 in lookaside.
-    %load/v 12, v0x22fa670_0, 1; Only need 1 of 4 bits
-; Save base=12 wid=1 in lookaside.
-    %xor 11, 12, 1;
-    %and 10, 11, 1;
-    %load/v 11, v0x22fa3d0_0, 1;
-    %and 10, 11, 1;
-    %xor 9, 10, 1;
-    %xor 8, 9, 1;
-    %ix/load 0, 2, 0;
-    %set/x0 v0x22fa540_0, 8, 1;
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.20, 4;
-    %load/x1p 8, v0x22fa5c0_0, 1;
-    %jmp T_1.21;
-T_1.20 ;
-    %mov 8, 2, 1;
-T_1.21 ;
-; Save base=8 wid=1 in lookaside.
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.22, 4;
-    %load/x1p 9, v0x22fa670_0, 1;
-    %jmp T_1.23;
-T_1.22 ;
-    %mov 9, 2, 1;
-T_1.23 ;
-; Save base=9 wid=1 in lookaside.
-    %xor 8, 9, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.24, 4;
-    %load/x1p 9, v0x22fa5c0_0, 1;
-    %jmp T_1.25;
-T_1.24 ;
-    %mov 9, 2, 1;
-T_1.25 ;
-; Save base=9 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.26, 4;
-    %load/x1p 10, v0x22fa670_0, 1;
-    %jmp T_1.27;
-T_1.26 ;
-    %mov 10, 2, 1;
-T_1.27 ;
-; Save base=10 wid=1 in lookaside.
-    %and 9, 10, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.28, 4;
-    %load/x1p 10, v0x22fa5c0_0, 1;
-    %jmp T_1.29;
-T_1.28 ;
-    %mov 10, 2, 1;
-T_1.29 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.30, 4;
-    %load/x1p 11, v0x22fa670_0, 1;
-    %jmp T_1.31;
-T_1.30 ;
-    %mov 11, 2, 1;
-T_1.31 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.32, 4;
-    %load/x1p 11, v0x22fa5c0_0, 1;
-    %jmp T_1.33;
-T_1.32 ;
-    %mov 11, 2, 1;
-T_1.33 ;
-; Save base=11 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.34, 4;
-    %load/x1p 12, v0x22fa670_0, 1;
-    %jmp T_1.35;
-T_1.34 ;
-    %mov 12, 2, 1;
-T_1.35 ;
-; Save base=12 wid=1 in lookaside.
-    %and 11, 12, 1;
-    %and 10, 11, 1;
-    %xor 9, 10, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.36, 4;
-    %load/x1p 10, v0x22fa5c0_0, 1;
-    %jmp T_1.37;
-T_1.36 ;
-    %mov 10, 2, 1;
-T_1.37 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.38, 4;
-    %load/x1p 11, v0x22fa670_0, 1;
-    %jmp T_1.39;
-T_1.38 ;
-    %mov 11, 2, 1;
-T_1.39 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.40, 4;
-    %load/x1p 11, v0x22fa5c0_0, 1;
-    %jmp T_1.41;
-T_1.40 ;
-    %mov 11, 2, 1;
-T_1.41 ;
-; Save base=11 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.42, 4;
-    %load/x1p 12, v0x22fa670_0, 1;
-    %jmp T_1.43;
-T_1.42 ;
-    %mov 12, 2, 1;
-T_1.43 ;
-; Save base=12 wid=1 in lookaside.
-    %xor 11, 12, 1;
-    %and 10, 11, 1;
-    %load/v 11, v0x22fa5c0_0, 1; Only need 1 of 4 bits
-; Save base=11 wid=1 in lookaside.
-    %load/v 12, v0x22fa670_0, 1; Only need 1 of 4 bits
-; Save base=12 wid=1 in lookaside.
-    %and 11, 12, 1;
-    %and 10, 11, 1;
-    %xor 9, 10, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.44, 4;
-    %load/x1p 10, v0x22fa5c0_0, 1;
-    %jmp T_1.45;
-T_1.44 ;
-    %mov 10, 2, 1;
-T_1.45 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.46, 4;
-    %load/x1p 11, v0x22fa670_0, 1;
-    %jmp T_1.47;
-T_1.46 ;
-    %mov 11, 2, 1;
-T_1.47 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.48, 4;
-    %load/x1p 11, v0x22fa5c0_0, 1;
-    %jmp T_1.49;
-T_1.48 ;
-    %mov 11, 2, 1;
-T_1.49 ;
-; Save base=11 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.50, 4;
-    %load/x1p 12, v0x22fa670_0, 1;
-    %jmp T_1.51;
-T_1.50 ;
-    %mov 12, 2, 1;
-T_1.51 ;
-; Save base=12 wid=1 in lookaside.
-    %xor 11, 12, 1;
-    %and 10, 11, 1;
-    %load/v 11, v0x22fa5c0_0, 1; Only need 1 of 4 bits
-; Save base=11 wid=1 in lookaside.
-    %load/v 12, v0x22fa670_0, 1; Only need 1 of 4 bits
-; Save base=12 wid=1 in lookaside.
-    %xor 11, 12, 1;
-    %and 10, 11, 1;
-    %load/v 11, v0x22fa3d0_0, 1;
-    %and 10, 11, 1;
-    %xor 9, 10, 1;
-    %xor 8, 9, 1;
-    %ix/load 0, 3, 0;
-    %set/x0 v0x22fa540_0, 8, 1;
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.52, 4;
-    %load/x1p 8, v0x22fa5c0_0, 1;
-    %jmp T_1.53;
-T_1.52 ;
-    %mov 8, 2, 1;
-T_1.53 ;
-; Save base=8 wid=1 in lookaside.
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.54, 4;
-    %load/x1p 9, v0x22fa670_0, 1;
-    %jmp T_1.55;
-T_1.54 ;
-    %mov 9, 2, 1;
-T_1.55 ;
-; Save base=9 wid=1 in lookaside.
-    %and 8, 9, 1;
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.56, 4;
-    %load/x1p 9, v0x22fa5c0_0, 1;
-    %jmp T_1.57;
-T_1.56 ;
-    %mov 9, 2, 1;
-T_1.57 ;
-; Save base=9 wid=1 in lookaside.
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.58, 4;
-    %load/x1p 10, v0x22fa670_0, 1;
-    %jmp T_1.59;
-T_1.58 ;
-    %mov 10, 2, 1;
-T_1.59 ;
-; Save base=10 wid=1 in lookaside.
-    %xor 9, 10, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.60, 4;
-    %load/x1p 10, v0x22fa5c0_0, 1;
-    %jmp T_1.61;
-T_1.60 ;
-    %mov 10, 2, 1;
-T_1.61 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.62, 4;
-    %load/x1p 11, v0x22fa670_0, 1;
-    %jmp T_1.63;
-T_1.62 ;
-    %mov 11, 2, 1;
-T_1.63 ;
-; Save base=11 wid=1 in lookaside.
-    %and 10, 11, 1;
-    %and 9, 10, 1;
-    %xor 8, 9, 1;
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.64, 4;
-    %load/x1p 9, v0x22fa5c0_0, 1;
-    %jmp T_1.65;
-T_1.64 ;
-    %mov 9, 2, 1;
-T_1.65 ;
-; Save base=9 wid=1 in lookaside.
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.66, 4;
-    %load/x1p 10, v0x22fa670_0, 1;
-    %jmp T_1.67;
-T_1.66 ;
-    %mov 10, 2, 1;
-T_1.67 ;
-; Save base=10 wid=1 in lookaside.
-    %xor 9, 10, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.68, 4;
-    %load/x1p 10, v0x22fa5c0_0, 1;
-    %jmp T_1.69;
-T_1.68 ;
-    %mov 10, 2, 1;
-T_1.69 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.70, 4;
-    %load/x1p 11, v0x22fa670_0, 1;
-    %jmp T_1.71;
-T_1.70 ;
-    %mov 11, 2, 1;
-T_1.71 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %and 9, 10, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.72, 4;
-    %load/x1p 10, v0x22fa5c0_0, 1;
-    %jmp T_1.73;
-T_1.72 ;
-    %mov 10, 2, 1;
-T_1.73 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.74, 4;
-    %load/x1p 11, v0x22fa670_0, 1;
-    %jmp T_1.75;
-T_1.74 ;
-    %mov 11, 2, 1;
-T_1.75 ;
-; Save base=11 wid=1 in lookaside.
-    %and 10, 11, 1;
-    %and 9, 10, 1;
-    %xor 8, 9, 1;
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.76, 4;
-    %load/x1p 9, v0x22fa5c0_0, 1;
-    %jmp T_1.77;
-T_1.76 ;
-    %mov 9, 2, 1;
-T_1.77 ;
-; Save base=9 wid=1 in lookaside.
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.78, 4;
-    %load/x1p 10, v0x22fa670_0, 1;
-    %jmp T_1.79;
-T_1.78 ;
-    %mov 10, 2, 1;
-T_1.79 ;
-; Save base=10 wid=1 in lookaside.
-    %xor 9, 10, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.80, 4;
-    %load/x1p 10, v0x22fa5c0_0, 1;
-    %jmp T_1.81;
-T_1.80 ;
-    %mov 10, 2, 1;
-T_1.81 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.82, 4;
-    %load/x1p 11, v0x22fa670_0, 1;
-    %jmp T_1.83;
-T_1.82 ;
-    %mov 11, 2, 1;
-T_1.83 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %and 9, 10, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.84, 4;
-    %load/x1p 10, v0x22fa5c0_0, 1;
-    %jmp T_1.85;
-T_1.84 ;
-    %mov 10, 2, 1;
-T_1.85 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.86, 4;
-    %load/x1p 11, v0x22fa670_0, 1;
-    %jmp T_1.87;
-T_1.86 ;
-    %mov 11, 2, 1;
-T_1.87 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %and 9, 10, 1;
-    %load/v 10, v0x22fa5c0_0, 1; Only need 1 of 4 bits
-; Save base=10 wid=1 in lookaside.
-    %load/v 11, v0x22fa670_0, 1; Only need 1 of 4 bits
-; Save base=11 wid=1 in lookaside.
-    %and 10, 11, 1;
-    %and 9, 10, 1;
-    %xor 8, 9, 1;
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.88, 4;
-    %load/x1p 9, v0x22fa5c0_0, 1;
-    %jmp T_1.89;
-T_1.88 ;
-    %mov 9, 2, 1;
-T_1.89 ;
-; Save base=9 wid=1 in lookaside.
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.90, 4;
-    %load/x1p 10, v0x22fa670_0, 1;
-    %jmp T_1.91;
-T_1.90 ;
-    %mov 10, 2, 1;
-T_1.91 ;
-; Save base=10 wid=1 in lookaside.
-    %xor 9, 10, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.92, 4;
-    %load/x1p 10, v0x22fa5c0_0, 1;
-    %jmp T_1.93;
-T_1.92 ;
-    %mov 10, 2, 1;
-T_1.93 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.94, 4;
-    %load/x1p 11, v0x22fa670_0, 1;
-    %jmp T_1.95;
-T_1.94 ;
-    %mov 11, 2, 1;
-T_1.95 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %and 9, 10, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.96, 4;
-    %load/x1p 10, v0x22fa5c0_0, 1;
-    %jmp T_1.97;
-T_1.96 ;
-    %mov 10, 2, 1;
-T_1.97 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_1.98, 4;
-    %load/x1p 11, v0x22fa670_0, 1;
-    %jmp T_1.99;
-T_1.98 ;
-    %mov 11, 2, 1;
-T_1.99 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %and 9, 10, 1;
-    %load/v 10, v0x22fa5c0_0, 1; Only need 1 of 4 bits
-; Save base=10 wid=1 in lookaside.
-    %load/v 11, v0x22fa670_0, 1; Only need 1 of 4 bits
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %and 9, 10, 1;
-    %load/v 10, v0x22fa3d0_0, 1;
-    %and 9, 10, 1;
-    %xor 8, 9, 1;
-    %set/v v0x22fa490_0, 8, 1;
-    %jmp T_1;
-    .thread T_1, $push;
-    .scope S_0x22f9c90;
-T_2 ;
-    %wait E_0x22f9e40;
-    %load/v 8, v0x22fa080_0, 1; Only need 1 of 4 bits
-; Save base=8 wid=1 in lookaside.
-    %load/v 9, v0x22fa130_0, 1; Only need 1 of 4 bits
-; Save base=9 wid=1 in lookaside.
-    %xor 8, 9, 1;
-    %load/v 9, v0x22f9e90_0, 1;
-    %xor 8, 9, 1;
-    %ix/load 0, 0, 0;
-    %set/x0 v0x22fa000_0, 8, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.0, 4;
-    %load/x1p 8, v0x22fa080_0, 1;
-    %jmp T_2.1;
-T_2.0 ;
-    %mov 8, 2, 1;
-T_2.1 ;
-; Save base=8 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.2, 4;
-    %load/x1p 9, v0x22fa130_0, 1;
-    %jmp T_2.3;
-T_2.2 ;
-    %mov 9, 2, 1;
-T_2.3 ;
-; Save base=9 wid=1 in lookaside.
-    %xor 8, 9, 1;
-    %load/v 9, v0x22fa080_0, 1; Only need 1 of 4 bits
-; Save base=9 wid=1 in lookaside.
-    %load/v 10, v0x22fa130_0, 1; Only need 1 of 4 bits
-; Save base=10 wid=1 in lookaside.
-    %and 9, 10, 1;
-    %load/v 10, v0x22fa080_0, 1; Only need 1 of 4 bits
-; Save base=10 wid=1 in lookaside.
-    %load/v 11, v0x22fa130_0, 1; Only need 1 of 4 bits
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %load/v 11, v0x22f9e90_0, 1;
-    %and 10, 11, 1;
-    %xor 9, 10, 1;
-    %xor 8, 9, 1;
-    %ix/load 0, 1, 0;
-    %set/x0 v0x22fa000_0, 8, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.4, 4;
-    %load/x1p 8, v0x22fa080_0, 1;
-    %jmp T_2.5;
-T_2.4 ;
-    %mov 8, 2, 1;
-T_2.5 ;
-; Save base=8 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.6, 4;
-    %load/x1p 9, v0x22fa130_0, 1;
-    %jmp T_2.7;
-T_2.6 ;
-    %mov 9, 2, 1;
-T_2.7 ;
-; Save base=9 wid=1 in lookaside.
-    %xor 8, 9, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.8, 4;
-    %load/x1p 9, v0x22fa080_0, 1;
-    %jmp T_2.9;
-T_2.8 ;
-    %mov 9, 2, 1;
-T_2.9 ;
-; Save base=9 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.10, 4;
-    %load/x1p 10, v0x22fa130_0, 1;
-    %jmp T_2.11;
-T_2.10 ;
-    %mov 10, 2, 1;
-T_2.11 ;
-; Save base=10 wid=1 in lookaside.
-    %and 9, 10, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.12, 4;
-    %load/x1p 10, v0x22fa080_0, 1;
-    %jmp T_2.13;
-T_2.12 ;
-    %mov 10, 2, 1;
-T_2.13 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.14, 4;
-    %load/x1p 11, v0x22fa130_0, 1;
-    %jmp T_2.15;
-T_2.14 ;
-    %mov 11, 2, 1;
-T_2.15 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %load/v 11, v0x22fa080_0, 1; Only need 1 of 4 bits
-; Save base=11 wid=1 in lookaside.
-    %load/v 12, v0x22fa130_0, 1; Only need 1 of 4 bits
-; Save base=12 wid=1 in lookaside.
-    %and 11, 12, 1;
-    %and 10, 11, 1;
-    %xor 9, 10, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.16, 4;
-    %load/x1p 10, v0x22fa080_0, 1;
-    %jmp T_2.17;
-T_2.16 ;
-    %mov 10, 2, 1;
-T_2.17 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.18, 4;
-    %load/x1p 11, v0x22fa130_0, 1;
-    %jmp T_2.19;
-T_2.18 ;
-    %mov 11, 2, 1;
-T_2.19 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %load/v 11, v0x22fa080_0, 1; Only need 1 of 4 bits
-; Save base=11 wid=1 in lookaside.
-    %load/v 12, v0x22fa130_0, 1; Only need 1 of 4 bits
-; Save base=12 wid=1 in lookaside.
-    %xor 11, 12, 1;
-    %and 10, 11, 1;
-    %load/v 11, v0x22f9e90_0, 1;
-    %and 10, 11, 1;
-    %xor 9, 10, 1;
-    %xor 8, 9, 1;
-    %ix/load 0, 2, 0;
-    %set/x0 v0x22fa000_0, 8, 1;
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.20, 4;
-    %load/x1p 8, v0x22fa080_0, 1;
-    %jmp T_2.21;
-T_2.20 ;
-    %mov 8, 2, 1;
-T_2.21 ;
-; Save base=8 wid=1 in lookaside.
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.22, 4;
-    %load/x1p 9, v0x22fa130_0, 1;
-    %jmp T_2.23;
-T_2.22 ;
-    %mov 9, 2, 1;
-T_2.23 ;
-; Save base=9 wid=1 in lookaside.
-    %xor 8, 9, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.24, 4;
-    %load/x1p 9, v0x22fa080_0, 1;
-    %jmp T_2.25;
-T_2.24 ;
-    %mov 9, 2, 1;
-T_2.25 ;
-; Save base=9 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.26, 4;
-    %load/x1p 10, v0x22fa130_0, 1;
-    %jmp T_2.27;
-T_2.26 ;
-    %mov 10, 2, 1;
-T_2.27 ;
-; Save base=10 wid=1 in lookaside.
-    %and 9, 10, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.28, 4;
-    %load/x1p 10, v0x22fa080_0, 1;
-    %jmp T_2.29;
-T_2.28 ;
-    %mov 10, 2, 1;
-T_2.29 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.30, 4;
-    %load/x1p 11, v0x22fa130_0, 1;
-    %jmp T_2.31;
-T_2.30 ;
-    %mov 11, 2, 1;
-T_2.31 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.32, 4;
-    %load/x1p 11, v0x22fa080_0, 1;
-    %jmp T_2.33;
-T_2.32 ;
-    %mov 11, 2, 1;
-T_2.33 ;
-; Save base=11 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.34, 4;
-    %load/x1p 12, v0x22fa130_0, 1;
-    %jmp T_2.35;
-T_2.34 ;
-    %mov 12, 2, 1;
-T_2.35 ;
-; Save base=12 wid=1 in lookaside.
-    %and 11, 12, 1;
-    %and 10, 11, 1;
-    %xor 9, 10, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.36, 4;
-    %load/x1p 10, v0x22fa080_0, 1;
-    %jmp T_2.37;
-T_2.36 ;
-    %mov 10, 2, 1;
-T_2.37 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.38, 4;
-    %load/x1p 11, v0x22fa130_0, 1;
-    %jmp T_2.39;
-T_2.38 ;
-    %mov 11, 2, 1;
-T_2.39 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.40, 4;
-    %load/x1p 11, v0x22fa080_0, 1;
-    %jmp T_2.41;
-T_2.40 ;
-    %mov 11, 2, 1;
-T_2.41 ;
-; Save base=11 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.42, 4;
-    %load/x1p 12, v0x22fa130_0, 1;
-    %jmp T_2.43;
-T_2.42 ;
-    %mov 12, 2, 1;
-T_2.43 ;
-; Save base=12 wid=1 in lookaside.
-    %xor 11, 12, 1;
-    %and 10, 11, 1;
-    %load/v 11, v0x22fa080_0, 1; Only need 1 of 4 bits
-; Save base=11 wid=1 in lookaside.
-    %load/v 12, v0x22fa130_0, 1; Only need 1 of 4 bits
-; Save base=12 wid=1 in lookaside.
-    %and 11, 12, 1;
-    %and 10, 11, 1;
-    %xor 9, 10, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.44, 4;
-    %load/x1p 10, v0x22fa080_0, 1;
-    %jmp T_2.45;
-T_2.44 ;
-    %mov 10, 2, 1;
-T_2.45 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.46, 4;
-    %load/x1p 11, v0x22fa130_0, 1;
-    %jmp T_2.47;
-T_2.46 ;
-    %mov 11, 2, 1;
-T_2.47 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.48, 4;
-    %load/x1p 11, v0x22fa080_0, 1;
-    %jmp T_2.49;
-T_2.48 ;
-    %mov 11, 2, 1;
-T_2.49 ;
-; Save base=11 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.50, 4;
-    %load/x1p 12, v0x22fa130_0, 1;
-    %jmp T_2.51;
-T_2.50 ;
-    %mov 12, 2, 1;
-T_2.51 ;
-; Save base=12 wid=1 in lookaside.
-    %xor 11, 12, 1;
-    %and 10, 11, 1;
-    %load/v 11, v0x22fa080_0, 1; Only need 1 of 4 bits
-; Save base=11 wid=1 in lookaside.
-    %load/v 12, v0x22fa130_0, 1; Only need 1 of 4 bits
-; Save base=12 wid=1 in lookaside.
-    %xor 11, 12, 1;
-    %and 10, 11, 1;
-    %load/v 11, v0x22f9e90_0, 1;
-    %and 10, 11, 1;
-    %xor 9, 10, 1;
-    %xor 8, 9, 1;
-    %ix/load 0, 3, 0;
-    %set/x0 v0x22fa000_0, 8, 1;
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.52, 4;
-    %load/x1p 8, v0x22fa080_0, 1;
-    %jmp T_2.53;
-T_2.52 ;
-    %mov 8, 2, 1;
-T_2.53 ;
-; Save base=8 wid=1 in lookaside.
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.54, 4;
-    %load/x1p 9, v0x22fa130_0, 1;
-    %jmp T_2.55;
-T_2.54 ;
-    %mov 9, 2, 1;
-T_2.55 ;
-; Save base=9 wid=1 in lookaside.
-    %and 8, 9, 1;
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.56, 4;
-    %load/x1p 9, v0x22fa080_0, 1;
-    %jmp T_2.57;
-T_2.56 ;
-    %mov 9, 2, 1;
-T_2.57 ;
-; Save base=9 wid=1 in lookaside.
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.58, 4;
-    %load/x1p 10, v0x22fa130_0, 1;
-    %jmp T_2.59;
-T_2.58 ;
-    %mov 10, 2, 1;
-T_2.59 ;
-; Save base=10 wid=1 in lookaside.
-    %xor 9, 10, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.60, 4;
-    %load/x1p 10, v0x22fa080_0, 1;
-    %jmp T_2.61;
-T_2.60 ;
-    %mov 10, 2, 1;
-T_2.61 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.62, 4;
-    %load/x1p 11, v0x22fa130_0, 1;
-    %jmp T_2.63;
-T_2.62 ;
-    %mov 11, 2, 1;
-T_2.63 ;
-; Save base=11 wid=1 in lookaside.
-    %and 10, 11, 1;
-    %and 9, 10, 1;
-    %xor 8, 9, 1;
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.64, 4;
-    %load/x1p 9, v0x22fa080_0, 1;
-    %jmp T_2.65;
-T_2.64 ;
-    %mov 9, 2, 1;
-T_2.65 ;
-; Save base=9 wid=1 in lookaside.
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.66, 4;
-    %load/x1p 10, v0x22fa130_0, 1;
-    %jmp T_2.67;
-T_2.66 ;
-    %mov 10, 2, 1;
-T_2.67 ;
-; Save base=10 wid=1 in lookaside.
-    %xor 9, 10, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.68, 4;
-    %load/x1p 10, v0x22fa080_0, 1;
-    %jmp T_2.69;
-T_2.68 ;
-    %mov 10, 2, 1;
-T_2.69 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.70, 4;
-    %load/x1p 11, v0x22fa130_0, 1;
-    %jmp T_2.71;
-T_2.70 ;
-    %mov 11, 2, 1;
-T_2.71 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %and 9, 10, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.72, 4;
-    %load/x1p 10, v0x22fa080_0, 1;
-    %jmp T_2.73;
-T_2.72 ;
-    %mov 10, 2, 1;
-T_2.73 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.74, 4;
-    %load/x1p 11, v0x22fa130_0, 1;
-    %jmp T_2.75;
-T_2.74 ;
-    %mov 11, 2, 1;
-T_2.75 ;
-; Save base=11 wid=1 in lookaside.
-    %and 10, 11, 1;
-    %and 9, 10, 1;
-    %xor 8, 9, 1;
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.76, 4;
-    %load/x1p 9, v0x22fa080_0, 1;
-    %jmp T_2.77;
-T_2.76 ;
-    %mov 9, 2, 1;
-T_2.77 ;
-; Save base=9 wid=1 in lookaside.
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.78, 4;
-    %load/x1p 10, v0x22fa130_0, 1;
-    %jmp T_2.79;
-T_2.78 ;
-    %mov 10, 2, 1;
-T_2.79 ;
-; Save base=10 wid=1 in lookaside.
-    %xor 9, 10, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.80, 4;
-    %load/x1p 10, v0x22fa080_0, 1;
-    %jmp T_2.81;
-T_2.80 ;
-    %mov 10, 2, 1;
-T_2.81 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.82, 4;
-    %load/x1p 11, v0x22fa130_0, 1;
-    %jmp T_2.83;
-T_2.82 ;
-    %mov 11, 2, 1;
-T_2.83 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %and 9, 10, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.84, 4;
-    %load/x1p 10, v0x22fa080_0, 1;
-    %jmp T_2.85;
-T_2.84 ;
-    %mov 10, 2, 1;
-T_2.85 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.86, 4;
-    %load/x1p 11, v0x22fa130_0, 1;
-    %jmp T_2.87;
-T_2.86 ;
-    %mov 11, 2, 1;
-T_2.87 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %and 9, 10, 1;
-    %load/v 10, v0x22fa080_0, 1; Only need 1 of 4 bits
-; Save base=10 wid=1 in lookaside.
-    %load/v 11, v0x22fa130_0, 1; Only need 1 of 4 bits
-; Save base=11 wid=1 in lookaside.
-    %and 10, 11, 1;
-    %and 9, 10, 1;
-    %xor 8, 9, 1;
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.88, 4;
-    %load/x1p 9, v0x22fa080_0, 1;
-    %jmp T_2.89;
-T_2.88 ;
-    %mov 9, 2, 1;
-T_2.89 ;
-; Save base=9 wid=1 in lookaside.
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.90, 4;
-    %load/x1p 10, v0x22fa130_0, 1;
-    %jmp T_2.91;
-T_2.90 ;
-    %mov 10, 2, 1;
-T_2.91 ;
-; Save base=10 wid=1 in lookaside.
-    %xor 9, 10, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.92, 4;
-    %load/x1p 10, v0x22fa080_0, 1;
-    %jmp T_2.93;
-T_2.92 ;
-    %mov 10, 2, 1;
-T_2.93 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.94, 4;
-    %load/x1p 11, v0x22fa130_0, 1;
-    %jmp T_2.95;
-T_2.94 ;
-    %mov 11, 2, 1;
-T_2.95 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %and 9, 10, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.96, 4;
-    %load/x1p 10, v0x22fa080_0, 1;
-    %jmp T_2.97;
-T_2.96 ;
-    %mov 10, 2, 1;
-T_2.97 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_2.98, 4;
-    %load/x1p 11, v0x22fa130_0, 1;
-    %jmp T_2.99;
-T_2.98 ;
-    %mov 11, 2, 1;
-T_2.99 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %and 9, 10, 1;
-    %load/v 10, v0x22fa080_0, 1; Only need 1 of 4 bits
-; Save base=10 wid=1 in lookaside.
-    %load/v 11, v0x22fa130_0, 1; Only need 1 of 4 bits
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %and 9, 10, 1;
-    %load/v 10, v0x22f9e90_0, 1;
-    %and 9, 10, 1;
-    %xor 8, 9, 1;
-    %set/v v0x22f9f50_0, 8, 1;
-    %jmp T_2;
-    .thread T_2, $push;
-    .scope S_0x22d1da0;
-T_3 ;
-    %wait E_0x22aeca0;
-    %load/v 8, v0x22f9b40_0, 1; Only need 1 of 4 bits
-; Save base=8 wid=1 in lookaside.
-    %load/v 9, v0x22f9bf0_0, 1; Only need 1 of 4 bits
-; Save base=9 wid=1 in lookaside.
-    %xor 8, 9, 1;
-    %load/v 9, v0x22be8d0_0, 1;
-    %xor 8, 9, 1;
-    %ix/load 0, 0, 0;
-    %set/x0 v0x22f9aa0_0, 8, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.0, 4;
-    %load/x1p 8, v0x22f9b40_0, 1;
-    %jmp T_3.1;
-T_3.0 ;
-    %mov 8, 2, 1;
-T_3.1 ;
-; Save base=8 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.2, 4;
-    %load/x1p 9, v0x22f9bf0_0, 1;
-    %jmp T_3.3;
-T_3.2 ;
-    %mov 9, 2, 1;
-T_3.3 ;
-; Save base=9 wid=1 in lookaside.
-    %xor 8, 9, 1;
-    %load/v 9, v0x22f9b40_0, 1; Only need 1 of 4 bits
-; Save base=9 wid=1 in lookaside.
-    %load/v 10, v0x22f9bf0_0, 1; Only need 1 of 4 bits
-; Save base=10 wid=1 in lookaside.
-    %and 9, 10, 1;
-    %load/v 10, v0x22f9b40_0, 1; Only need 1 of 4 bits
-; Save base=10 wid=1 in lookaside.
-    %load/v 11, v0x22f9bf0_0, 1; Only need 1 of 4 bits
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %load/v 11, v0x22be8d0_0, 1;
-    %and 10, 11, 1;
-    %xor 9, 10, 1;
-    %xor 8, 9, 1;
-    %ix/load 0, 1, 0;
-    %set/x0 v0x22f9aa0_0, 8, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.4, 4;
-    %load/x1p 8, v0x22f9b40_0, 1;
-    %jmp T_3.5;
-T_3.4 ;
-    %mov 8, 2, 1;
-T_3.5 ;
-; Save base=8 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.6, 4;
-    %load/x1p 9, v0x22f9bf0_0, 1;
-    %jmp T_3.7;
-T_3.6 ;
-    %mov 9, 2, 1;
-T_3.7 ;
-; Save base=9 wid=1 in lookaside.
-    %xor 8, 9, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.8, 4;
-    %load/x1p 9, v0x22f9b40_0, 1;
-    %jmp T_3.9;
-T_3.8 ;
-    %mov 9, 2, 1;
-T_3.9 ;
-; Save base=9 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.10, 4;
-    %load/x1p 10, v0x22f9bf0_0, 1;
-    %jmp T_3.11;
-T_3.10 ;
-    %mov 10, 2, 1;
-T_3.11 ;
-; Save base=10 wid=1 in lookaside.
-    %and 9, 10, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.12, 4;
-    %load/x1p 10, v0x22f9b40_0, 1;
-    %jmp T_3.13;
-T_3.12 ;
-    %mov 10, 2, 1;
-T_3.13 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.14, 4;
-    %load/x1p 11, v0x22f9bf0_0, 1;
-    %jmp T_3.15;
-T_3.14 ;
-    %mov 11, 2, 1;
-T_3.15 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %load/v 11, v0x22f9b40_0, 1; Only need 1 of 4 bits
-; Save base=11 wid=1 in lookaside.
-    %load/v 12, v0x22f9bf0_0, 1; Only need 1 of 4 bits
-; Save base=12 wid=1 in lookaside.
-    %and 11, 12, 1;
-    %and 10, 11, 1;
-    %xor 9, 10, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.16, 4;
-    %load/x1p 10, v0x22f9b40_0, 1;
-    %jmp T_3.17;
-T_3.16 ;
-    %mov 10, 2, 1;
-T_3.17 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.18, 4;
-    %load/x1p 11, v0x22f9bf0_0, 1;
-    %jmp T_3.19;
-T_3.18 ;
-    %mov 11, 2, 1;
-T_3.19 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %load/v 11, v0x22f9b40_0, 1; Only need 1 of 4 bits
-; Save base=11 wid=1 in lookaside.
-    %load/v 12, v0x22f9bf0_0, 1; Only need 1 of 4 bits
-; Save base=12 wid=1 in lookaside.
-    %xor 11, 12, 1;
-    %and 10, 11, 1;
-    %load/v 11, v0x22be8d0_0, 1;
-    %and 10, 11, 1;
-    %xor 9, 10, 1;
-    %xor 8, 9, 1;
-    %ix/load 0, 2, 0;
-    %set/x0 v0x22f9aa0_0, 8, 1;
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.20, 4;
-    %load/x1p 8, v0x22f9b40_0, 1;
-    %jmp T_3.21;
-T_3.20 ;
-    %mov 8, 2, 1;
-T_3.21 ;
-; Save base=8 wid=1 in lookaside.
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.22, 4;
-    %load/x1p 9, v0x22f9bf0_0, 1;
-    %jmp T_3.23;
-T_3.22 ;
-    %mov 9, 2, 1;
-T_3.23 ;
-; Save base=9 wid=1 in lookaside.
-    %xor 8, 9, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.24, 4;
-    %load/x1p 9, v0x22f9b40_0, 1;
-    %jmp T_3.25;
-T_3.24 ;
-    %mov 9, 2, 1;
-T_3.25 ;
-; Save base=9 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.26, 4;
-    %load/x1p 10, v0x22f9bf0_0, 1;
-    %jmp T_3.27;
-T_3.26 ;
-    %mov 10, 2, 1;
-T_3.27 ;
-; Save base=10 wid=1 in lookaside.
-    %and 9, 10, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.28, 4;
-    %load/x1p 10, v0x22f9b40_0, 1;
-    %jmp T_3.29;
-T_3.28 ;
-    %mov 10, 2, 1;
-T_3.29 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.30, 4;
-    %load/x1p 11, v0x22f9bf0_0, 1;
-    %jmp T_3.31;
-T_3.30 ;
-    %mov 11, 2, 1;
-T_3.31 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.32, 4;
-    %load/x1p 11, v0x22f9b40_0, 1;
-    %jmp T_3.33;
-T_3.32 ;
-    %mov 11, 2, 1;
-T_3.33 ;
-; Save base=11 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.34, 4;
-    %load/x1p 12, v0x22f9bf0_0, 1;
-    %jmp T_3.35;
-T_3.34 ;
-    %mov 12, 2, 1;
-T_3.35 ;
-; Save base=12 wid=1 in lookaside.
-    %and 11, 12, 1;
-    %and 10, 11, 1;
-    %xor 9, 10, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.36, 4;
-    %load/x1p 10, v0x22f9b40_0, 1;
-    %jmp T_3.37;
-T_3.36 ;
-    %mov 10, 2, 1;
-T_3.37 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.38, 4;
-    %load/x1p 11, v0x22f9bf0_0, 1;
-    %jmp T_3.39;
-T_3.38 ;
-    %mov 11, 2, 1;
-T_3.39 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.40, 4;
-    %load/x1p 11, v0x22f9b40_0, 1;
-    %jmp T_3.41;
-T_3.40 ;
-    %mov 11, 2, 1;
-T_3.41 ;
-; Save base=11 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.42, 4;
-    %load/x1p 12, v0x22f9bf0_0, 1;
-    %jmp T_3.43;
-T_3.42 ;
-    %mov 12, 2, 1;
-T_3.43 ;
-; Save base=12 wid=1 in lookaside.
-    %xor 11, 12, 1;
-    %and 10, 11, 1;
-    %load/v 11, v0x22f9b40_0, 1; Only need 1 of 4 bits
-; Save base=11 wid=1 in lookaside.
-    %load/v 12, v0x22f9bf0_0, 1; Only need 1 of 4 bits
-; Save base=12 wid=1 in lookaside.
-    %and 11, 12, 1;
-    %and 10, 11, 1;
-    %xor 9, 10, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.44, 4;
-    %load/x1p 10, v0x22f9b40_0, 1;
-    %jmp T_3.45;
-T_3.44 ;
-    %mov 10, 2, 1;
-T_3.45 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.46, 4;
-    %load/x1p 11, v0x22f9bf0_0, 1;
-    %jmp T_3.47;
-T_3.46 ;
-    %mov 11, 2, 1;
-T_3.47 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.48, 4;
-    %load/x1p 11, v0x22f9b40_0, 1;
-    %jmp T_3.49;
-T_3.48 ;
-    %mov 11, 2, 1;
-T_3.49 ;
-; Save base=11 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.50, 4;
-    %load/x1p 12, v0x22f9bf0_0, 1;
-    %jmp T_3.51;
-T_3.50 ;
-    %mov 12, 2, 1;
-T_3.51 ;
-; Save base=12 wid=1 in lookaside.
-    %xor 11, 12, 1;
-    %and 10, 11, 1;
-    %load/v 11, v0x22f9b40_0, 1; Only need 1 of 4 bits
-; Save base=11 wid=1 in lookaside.
-    %load/v 12, v0x22f9bf0_0, 1; Only need 1 of 4 bits
-; Save base=12 wid=1 in lookaside.
-    %xor 11, 12, 1;
-    %and 10, 11, 1;
-    %load/v 11, v0x22be8d0_0, 1;
-    %and 10, 11, 1;
-    %xor 9, 10, 1;
-    %xor 8, 9, 1;
-    %ix/load 0, 3, 0;
-    %set/x0 v0x22f9aa0_0, 8, 1;
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.52, 4;
-    %load/x1p 8, v0x22f9b40_0, 1;
-    %jmp T_3.53;
-T_3.52 ;
-    %mov 8, 2, 1;
-T_3.53 ;
-; Save base=8 wid=1 in lookaside.
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.54, 4;
-    %load/x1p 9, v0x22f9bf0_0, 1;
-    %jmp T_3.55;
-T_3.54 ;
-    %mov 9, 2, 1;
-T_3.55 ;
-; Save base=9 wid=1 in lookaside.
-    %and 8, 9, 1;
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.56, 4;
-    %load/x1p 9, v0x22f9b40_0, 1;
-    %jmp T_3.57;
-T_3.56 ;
-    %mov 9, 2, 1;
-T_3.57 ;
-; Save base=9 wid=1 in lookaside.
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.58, 4;
-    %load/x1p 10, v0x22f9bf0_0, 1;
-    %jmp T_3.59;
-T_3.58 ;
-    %mov 10, 2, 1;
-T_3.59 ;
-; Save base=10 wid=1 in lookaside.
-    %xor 9, 10, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.60, 4;
-    %load/x1p 10, v0x22f9b40_0, 1;
-    %jmp T_3.61;
-T_3.60 ;
-    %mov 10, 2, 1;
-T_3.61 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.62, 4;
-    %load/x1p 11, v0x22f9bf0_0, 1;
-    %jmp T_3.63;
-T_3.62 ;
-    %mov 11, 2, 1;
-T_3.63 ;
-; Save base=11 wid=1 in lookaside.
-    %and 10, 11, 1;
-    %and 9, 10, 1;
-    %xor 8, 9, 1;
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.64, 4;
-    %load/x1p 9, v0x22f9b40_0, 1;
-    %jmp T_3.65;
-T_3.64 ;
-    %mov 9, 2, 1;
-T_3.65 ;
-; Save base=9 wid=1 in lookaside.
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.66, 4;
-    %load/x1p 10, v0x22f9bf0_0, 1;
-    %jmp T_3.67;
-T_3.66 ;
-    %mov 10, 2, 1;
-T_3.67 ;
-; Save base=10 wid=1 in lookaside.
-    %xor 9, 10, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.68, 4;
-    %load/x1p 10, v0x22f9b40_0, 1;
-    %jmp T_3.69;
-T_3.68 ;
-    %mov 10, 2, 1;
-T_3.69 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.70, 4;
-    %load/x1p 11, v0x22f9bf0_0, 1;
-    %jmp T_3.71;
-T_3.70 ;
-    %mov 11, 2, 1;
-T_3.71 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %and 9, 10, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.72, 4;
-    %load/x1p 10, v0x22f9b40_0, 1;
-    %jmp T_3.73;
-T_3.72 ;
-    %mov 10, 2, 1;
-T_3.73 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.74, 4;
-    %load/x1p 11, v0x22f9bf0_0, 1;
-    %jmp T_3.75;
-T_3.74 ;
-    %mov 11, 2, 1;
-T_3.75 ;
-; Save base=11 wid=1 in lookaside.
-    %and 10, 11, 1;
-    %and 9, 10, 1;
-    %xor 8, 9, 1;
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.76, 4;
-    %load/x1p 9, v0x22f9b40_0, 1;
-    %jmp T_3.77;
-T_3.76 ;
-    %mov 9, 2, 1;
-T_3.77 ;
-; Save base=9 wid=1 in lookaside.
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.78, 4;
-    %load/x1p 10, v0x22f9bf0_0, 1;
-    %jmp T_3.79;
-T_3.78 ;
-    %mov 10, 2, 1;
-T_3.79 ;
-; Save base=10 wid=1 in lookaside.
-    %xor 9, 10, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.80, 4;
-    %load/x1p 10, v0x22f9b40_0, 1;
-    %jmp T_3.81;
-T_3.80 ;
-    %mov 10, 2, 1;
-T_3.81 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.82, 4;
-    %load/x1p 11, v0x22f9bf0_0, 1;
-    %jmp T_3.83;
-T_3.82 ;
-    %mov 11, 2, 1;
-T_3.83 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %and 9, 10, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.84, 4;
-    %load/x1p 10, v0x22f9b40_0, 1;
-    %jmp T_3.85;
-T_3.84 ;
-    %mov 10, 2, 1;
-T_3.85 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.86, 4;
-    %load/x1p 11, v0x22f9bf0_0, 1;
-    %jmp T_3.87;
-T_3.86 ;
-    %mov 11, 2, 1;
-T_3.87 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %and 9, 10, 1;
-    %load/v 10, v0x22f9b40_0, 1; Only need 1 of 4 bits
-; Save base=10 wid=1 in lookaside.
-    %load/v 11, v0x22f9bf0_0, 1; Only need 1 of 4 bits
-; Save base=11 wid=1 in lookaside.
-    %and 10, 11, 1;
-    %and 9, 10, 1;
-    %xor 8, 9, 1;
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.88, 4;
-    %load/x1p 9, v0x22f9b40_0, 1;
-    %jmp T_3.89;
-T_3.88 ;
-    %mov 9, 2, 1;
-T_3.89 ;
-; Save base=9 wid=1 in lookaside.
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.90, 4;
-    %load/x1p 10, v0x22f9bf0_0, 1;
-    %jmp T_3.91;
-T_3.90 ;
-    %mov 10, 2, 1;
-T_3.91 ;
-; Save base=10 wid=1 in lookaside.
-    %xor 9, 10, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.92, 4;
-    %load/x1p 10, v0x22f9b40_0, 1;
-    %jmp T_3.93;
-T_3.92 ;
-    %mov 10, 2, 1;
-T_3.93 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.94, 4;
-    %load/x1p 11, v0x22f9bf0_0, 1;
-    %jmp T_3.95;
-T_3.94 ;
-    %mov 11, 2, 1;
-T_3.95 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %and 9, 10, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.96, 4;
-    %load/x1p 10, v0x22f9b40_0, 1;
-    %jmp T_3.97;
-T_3.96 ;
-    %mov 10, 2, 1;
-T_3.97 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_3.98, 4;
-    %load/x1p 11, v0x22f9bf0_0, 1;
-    %jmp T_3.99;
-T_3.98 ;
-    %mov 11, 2, 1;
-T_3.99 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %and 9, 10, 1;
-    %load/v 10, v0x22f9b40_0, 1; Only need 1 of 4 bits
-; Save base=10 wid=1 in lookaside.
-    %load/v 11, v0x22f9bf0_0, 1; Only need 1 of 4 bits
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %and 9, 10, 1;
-    %load/v 10, v0x22be8d0_0, 1;
-    %and 9, 10, 1;
-    %xor 8, 9, 1;
-    %set/v v0x22f9a00_0, 8, 1;
-    %jmp T_3;
-    .thread T_3, $push;
-    .scope S_0x22fb430;
-T_4 ;
-    %wait E_0x22fb560;
-    %load/v 8, v0x22fb790_0, 1; Only need 1 of 4 bits
-; Save base=8 wid=1 in lookaside.
-    %load/v 9, v0x22fb840_0, 1; Only need 1 of 4 bits
-; Save base=9 wid=1 in lookaside.
-    %xor 8, 9, 1;
-    %load/v 9, v0x22fb590_0, 1;
-    %xor 8, 9, 1;
-    %ix/load 0, 0, 0;
-    %set/x0 v0x22fb6f0_0, 8, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.0, 4;
-    %load/x1p 8, v0x22fb790_0, 1;
-    %jmp T_4.1;
-T_4.0 ;
-    %mov 8, 2, 1;
-T_4.1 ;
-; Save base=8 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.2, 4;
-    %load/x1p 9, v0x22fb840_0, 1;
-    %jmp T_4.3;
-T_4.2 ;
-    %mov 9, 2, 1;
-T_4.3 ;
-; Save base=9 wid=1 in lookaside.
-    %xor 8, 9, 1;
-    %load/v 9, v0x22fb790_0, 1; Only need 1 of 4 bits
-; Save base=9 wid=1 in lookaside.
-    %load/v 10, v0x22fb840_0, 1; Only need 1 of 4 bits
-; Save base=10 wid=1 in lookaside.
-    %and 9, 10, 1;
-    %load/v 10, v0x22fb790_0, 1; Only need 1 of 4 bits
-; Save base=10 wid=1 in lookaside.
-    %load/v 11, v0x22fb840_0, 1; Only need 1 of 4 bits
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %load/v 11, v0x22fb590_0, 1;
-    %and 10, 11, 1;
-    %xor 9, 10, 1;
-    %xor 8, 9, 1;
-    %ix/load 0, 1, 0;
-    %set/x0 v0x22fb6f0_0, 8, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.4, 4;
-    %load/x1p 8, v0x22fb790_0, 1;
-    %jmp T_4.5;
-T_4.4 ;
-    %mov 8, 2, 1;
-T_4.5 ;
-; Save base=8 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.6, 4;
-    %load/x1p 9, v0x22fb840_0, 1;
-    %jmp T_4.7;
-T_4.6 ;
-    %mov 9, 2, 1;
-T_4.7 ;
-; Save base=9 wid=1 in lookaside.
-    %xor 8, 9, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.8, 4;
-    %load/x1p 9, v0x22fb790_0, 1;
-    %jmp T_4.9;
-T_4.8 ;
-    %mov 9, 2, 1;
-T_4.9 ;
-; Save base=9 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.10, 4;
-    %load/x1p 10, v0x22fb840_0, 1;
-    %jmp T_4.11;
-T_4.10 ;
-    %mov 10, 2, 1;
-T_4.11 ;
-; Save base=10 wid=1 in lookaside.
-    %and 9, 10, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.12, 4;
-    %load/x1p 10, v0x22fb790_0, 1;
-    %jmp T_4.13;
-T_4.12 ;
-    %mov 10, 2, 1;
-T_4.13 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.14, 4;
-    %load/x1p 11, v0x22fb840_0, 1;
-    %jmp T_4.15;
-T_4.14 ;
-    %mov 11, 2, 1;
-T_4.15 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %load/v 11, v0x22fb790_0, 1; Only need 1 of 4 bits
-; Save base=11 wid=1 in lookaside.
-    %load/v 12, v0x22fb840_0, 1; Only need 1 of 4 bits
-; Save base=12 wid=1 in lookaside.
-    %and 11, 12, 1;
-    %and 10, 11, 1;
-    %xor 9, 10, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.16, 4;
-    %load/x1p 10, v0x22fb790_0, 1;
-    %jmp T_4.17;
-T_4.16 ;
-    %mov 10, 2, 1;
-T_4.17 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.18, 4;
-    %load/x1p 11, v0x22fb840_0, 1;
-    %jmp T_4.19;
-T_4.18 ;
-    %mov 11, 2, 1;
-T_4.19 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %load/v 11, v0x22fb790_0, 1; Only need 1 of 4 bits
-; Save base=11 wid=1 in lookaside.
-    %load/v 12, v0x22fb840_0, 1; Only need 1 of 4 bits
-; Save base=12 wid=1 in lookaside.
-    %xor 11, 12, 1;
-    %and 10, 11, 1;
-    %load/v 11, v0x22fb590_0, 1;
-    %and 10, 11, 1;
-    %xor 9, 10, 1;
-    %xor 8, 9, 1;
-    %ix/load 0, 2, 0;
-    %set/x0 v0x22fb6f0_0, 8, 1;
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.20, 4;
-    %load/x1p 8, v0x22fb790_0, 1;
-    %jmp T_4.21;
-T_4.20 ;
-    %mov 8, 2, 1;
-T_4.21 ;
-; Save base=8 wid=1 in lookaside.
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.22, 4;
-    %load/x1p 9, v0x22fb840_0, 1;
-    %jmp T_4.23;
-T_4.22 ;
-    %mov 9, 2, 1;
-T_4.23 ;
-; Save base=9 wid=1 in lookaside.
-    %xor 8, 9, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.24, 4;
-    %load/x1p 9, v0x22fb790_0, 1;
-    %jmp T_4.25;
-T_4.24 ;
-    %mov 9, 2, 1;
-T_4.25 ;
-; Save base=9 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.26, 4;
-    %load/x1p 10, v0x22fb840_0, 1;
-    %jmp T_4.27;
-T_4.26 ;
-    %mov 10, 2, 1;
-T_4.27 ;
-; Save base=10 wid=1 in lookaside.
-    %and 9, 10, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.28, 4;
-    %load/x1p 10, v0x22fb790_0, 1;
-    %jmp T_4.29;
-T_4.28 ;
-    %mov 10, 2, 1;
-T_4.29 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.30, 4;
-    %load/x1p 11, v0x22fb840_0, 1;
-    %jmp T_4.31;
-T_4.30 ;
-    %mov 11, 2, 1;
-T_4.31 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.32, 4;
-    %load/x1p 11, v0x22fb790_0, 1;
-    %jmp T_4.33;
-T_4.32 ;
-    %mov 11, 2, 1;
-T_4.33 ;
-; Save base=11 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.34, 4;
-    %load/x1p 12, v0x22fb840_0, 1;
-    %jmp T_4.35;
-T_4.34 ;
-    %mov 12, 2, 1;
-T_4.35 ;
-; Save base=12 wid=1 in lookaside.
-    %and 11, 12, 1;
-    %and 10, 11, 1;
-    %xor 9, 10, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.36, 4;
-    %load/x1p 10, v0x22fb790_0, 1;
-    %jmp T_4.37;
-T_4.36 ;
-    %mov 10, 2, 1;
-T_4.37 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.38, 4;
-    %load/x1p 11, v0x22fb840_0, 1;
-    %jmp T_4.39;
-T_4.38 ;
-    %mov 11, 2, 1;
-T_4.39 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.40, 4;
-    %load/x1p 11, v0x22fb790_0, 1;
-    %jmp T_4.41;
-T_4.40 ;
-    %mov 11, 2, 1;
-T_4.41 ;
-; Save base=11 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.42, 4;
-    %load/x1p 12, v0x22fb840_0, 1;
-    %jmp T_4.43;
-T_4.42 ;
-    %mov 12, 2, 1;
-T_4.43 ;
-; Save base=12 wid=1 in lookaside.
-    %xor 11, 12, 1;
-    %and 10, 11, 1;
-    %load/v 11, v0x22fb790_0, 1; Only need 1 of 4 bits
-; Save base=11 wid=1 in lookaside.
-    %load/v 12, v0x22fb840_0, 1; Only need 1 of 4 bits
-; Save base=12 wid=1 in lookaside.
-    %and 11, 12, 1;
-    %and 10, 11, 1;
-    %xor 9, 10, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.44, 4;
-    %load/x1p 10, v0x22fb790_0, 1;
-    %jmp T_4.45;
-T_4.44 ;
-    %mov 10, 2, 1;
-T_4.45 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.46, 4;
-    %load/x1p 11, v0x22fb840_0, 1;
-    %jmp T_4.47;
-T_4.46 ;
-    %mov 11, 2, 1;
-T_4.47 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.48, 4;
-    %load/x1p 11, v0x22fb790_0, 1;
-    %jmp T_4.49;
-T_4.48 ;
-    %mov 11, 2, 1;
-T_4.49 ;
-; Save base=11 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.50, 4;
-    %load/x1p 12, v0x22fb840_0, 1;
-    %jmp T_4.51;
-T_4.50 ;
-    %mov 12, 2, 1;
-T_4.51 ;
-; Save base=12 wid=1 in lookaside.
-    %xor 11, 12, 1;
-    %and 10, 11, 1;
-    %load/v 11, v0x22fb790_0, 1; Only need 1 of 4 bits
-; Save base=11 wid=1 in lookaside.
-    %load/v 12, v0x22fb840_0, 1; Only need 1 of 4 bits
-; Save base=12 wid=1 in lookaside.
-    %xor 11, 12, 1;
-    %and 10, 11, 1;
-    %load/v 11, v0x22fb590_0, 1;
-    %and 10, 11, 1;
-    %xor 9, 10, 1;
-    %xor 8, 9, 1;
-    %ix/load 0, 3, 0;
-    %set/x0 v0x22fb6f0_0, 8, 1;
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.52, 4;
-    %load/x1p 8, v0x22fb790_0, 1;
-    %jmp T_4.53;
-T_4.52 ;
-    %mov 8, 2, 1;
-T_4.53 ;
-; Save base=8 wid=1 in lookaside.
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.54, 4;
-    %load/x1p 9, v0x22fb840_0, 1;
-    %jmp T_4.55;
-T_4.54 ;
-    %mov 9, 2, 1;
-T_4.55 ;
-; Save base=9 wid=1 in lookaside.
-    %and 8, 9, 1;
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.56, 4;
-    %load/x1p 9, v0x22fb790_0, 1;
-    %jmp T_4.57;
-T_4.56 ;
-    %mov 9, 2, 1;
-T_4.57 ;
-; Save base=9 wid=1 in lookaside.
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.58, 4;
-    %load/x1p 10, v0x22fb840_0, 1;
-    %jmp T_4.59;
-T_4.58 ;
-    %mov 10, 2, 1;
-T_4.59 ;
-; Save base=10 wid=1 in lookaside.
-    %xor 9, 10, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.60, 4;
-    %load/x1p 10, v0x22fb790_0, 1;
-    %jmp T_4.61;
-T_4.60 ;
-    %mov 10, 2, 1;
-T_4.61 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.62, 4;
-    %load/x1p 11, v0x22fb840_0, 1;
-    %jmp T_4.63;
-T_4.62 ;
-    %mov 11, 2, 1;
-T_4.63 ;
-; Save base=11 wid=1 in lookaside.
-    %and 10, 11, 1;
-    %and 9, 10, 1;
-    %xor 8, 9, 1;
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.64, 4;
-    %load/x1p 9, v0x22fb790_0, 1;
-    %jmp T_4.65;
-T_4.64 ;
-    %mov 9, 2, 1;
-T_4.65 ;
-; Save base=9 wid=1 in lookaside.
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.66, 4;
-    %load/x1p 10, v0x22fb840_0, 1;
-    %jmp T_4.67;
-T_4.66 ;
-    %mov 10, 2, 1;
-T_4.67 ;
-; Save base=10 wid=1 in lookaside.
-    %xor 9, 10, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.68, 4;
-    %load/x1p 10, v0x22fb790_0, 1;
-    %jmp T_4.69;
-T_4.68 ;
-    %mov 10, 2, 1;
-T_4.69 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.70, 4;
-    %load/x1p 11, v0x22fb840_0, 1;
-    %jmp T_4.71;
-T_4.70 ;
-    %mov 11, 2, 1;
-T_4.71 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %and 9, 10, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.72, 4;
-    %load/x1p 10, v0x22fb790_0, 1;
-    %jmp T_4.73;
-T_4.72 ;
-    %mov 10, 2, 1;
-T_4.73 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.74, 4;
-    %load/x1p 11, v0x22fb840_0, 1;
-    %jmp T_4.75;
-T_4.74 ;
-    %mov 11, 2, 1;
-T_4.75 ;
-; Save base=11 wid=1 in lookaside.
-    %and 10, 11, 1;
-    %and 9, 10, 1;
-    %xor 8, 9, 1;
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.76, 4;
-    %load/x1p 9, v0x22fb790_0, 1;
-    %jmp T_4.77;
-T_4.76 ;
-    %mov 9, 2, 1;
-T_4.77 ;
-; Save base=9 wid=1 in lookaside.
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.78, 4;
-    %load/x1p 10, v0x22fb840_0, 1;
-    %jmp T_4.79;
-T_4.78 ;
-    %mov 10, 2, 1;
-T_4.79 ;
-; Save base=10 wid=1 in lookaside.
-    %xor 9, 10, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.80, 4;
-    %load/x1p 10, v0x22fb790_0, 1;
-    %jmp T_4.81;
-T_4.80 ;
-    %mov 10, 2, 1;
-T_4.81 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.82, 4;
-    %load/x1p 11, v0x22fb840_0, 1;
-    %jmp T_4.83;
-T_4.82 ;
-    %mov 11, 2, 1;
-T_4.83 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %and 9, 10, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.84, 4;
-    %load/x1p 10, v0x22fb790_0, 1;
-    %jmp T_4.85;
-T_4.84 ;
-    %mov 10, 2, 1;
-T_4.85 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.86, 4;
-    %load/x1p 11, v0x22fb840_0, 1;
-    %jmp T_4.87;
-T_4.86 ;
-    %mov 11, 2, 1;
-T_4.87 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %and 9, 10, 1;
-    %load/v 10, v0x22fb790_0, 1; Only need 1 of 4 bits
-; Save base=10 wid=1 in lookaside.
-    %load/v 11, v0x22fb840_0, 1; Only need 1 of 4 bits
-; Save base=11 wid=1 in lookaside.
-    %and 10, 11, 1;
-    %and 9, 10, 1;
-    %xor 8, 9, 1;
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.88, 4;
-    %load/x1p 9, v0x22fb790_0, 1;
-    %jmp T_4.89;
-T_4.88 ;
-    %mov 9, 2, 1;
-T_4.89 ;
-; Save base=9 wid=1 in lookaside.
-    %ix/load 1, 3, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.90, 4;
-    %load/x1p 10, v0x22fb840_0, 1;
-    %jmp T_4.91;
-T_4.90 ;
-    %mov 10, 2, 1;
-T_4.91 ;
-; Save base=10 wid=1 in lookaside.
-    %xor 9, 10, 1;
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.92, 4;
-    %load/x1p 10, v0x22fb790_0, 1;
-    %jmp T_4.93;
-T_4.92 ;
-    %mov 10, 2, 1;
-T_4.93 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 2, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.94, 4;
-    %load/x1p 11, v0x22fb840_0, 1;
-    %jmp T_4.95;
-T_4.94 ;
-    %mov 11, 2, 1;
-T_4.95 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %and 9, 10, 1;
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.96, 4;
-    %load/x1p 10, v0x22fb790_0, 1;
-    %jmp T_4.97;
-T_4.96 ;
-    %mov 10, 2, 1;
-T_4.97 ;
-; Save base=10 wid=1 in lookaside.
-    %ix/load 1, 1, 0;
-    %mov 4, 0, 1;
-    %jmp/1 T_4.98, 4;
-    %load/x1p 11, v0x22fb840_0, 1;
-    %jmp T_4.99;
-T_4.98 ;
-    %mov 11, 2, 1;
-T_4.99 ;
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %and 9, 10, 1;
-    %load/v 10, v0x22fb790_0, 1; Only need 1 of 4 bits
-; Save base=10 wid=1 in lookaside.
-    %load/v 11, v0x22fb840_0, 1; Only need 1 of 4 bits
-; Save base=11 wid=1 in lookaside.
-    %xor 10, 11, 1;
-    %and 9, 10, 1;
-    %load/v 10, v0x22fb590_0, 1;
-    %and 9, 10, 1;
-    %xor 8, 9, 1;
-    %set/v v0x22fb650_0, 8, 1;
-    %jmp T_4;
-    .thread T_4, $push;
-    .scope S_0x22aeea0;
-T_5 ;
+    %set/v v0x27fa770_0, 1, 1;
     %movi 8, 1, 32;
-    %set/v v0x22fbca0_0, 8, 32;
-T_5.0 ;
-    %load/v 8, v0x22fbca0_0, 32;
+    %set/v v0x27fa8a0_0, 8, 32;
+T_0.0 ;
+    %load/v 8, v0x27fa8a0_0, 32;
    %cmpi/s 8, 1, 32;
     %or 5, 4, 1;
-    %jmp/0xz T_5.1, 5;
-    %movi 8, 1, 4;
-    %set/v v0x22fb8e0_0, 8, 4;
-    %movi 8, 3, 4;
-    %set/v v0x22fba60_0, 8, 4;
+    %jmp/0xz T_0.1, 5;
+    %movi 8, 8, 4;
+    %set/v v0x27fa070_0, 8, 4;
+    %movi 12, 8, 4;
+    %set/v v0x27fa6f0_0, 12, 4;
     %delay 1, 0;
-    %vpi_call 3 39 "$display", "TESTCASE %d: %d + %d = %d", v0x22fbca0_0, v0x22fb8e0_0, v0x22fba60_0, v0x22fb9b0_0;
-    %load/v 8, v0x22fb9b0_0, 4;
-    %load/v 12, v0x22fb8e0_0, 4;
-    %load/v 16, v0x22fba60_0, 4;
+    %vpi_call 2 39 "$display", "TESTCASE %d: %d + %d = %d,%d", v0x27fa8a0_0, v0x27fa070_0, v0x27fa6f0_0, v0x27fa670_0, v0x27fa7f0_0;
+    %load/v 8, v0x27fa670_0, 4;
+    %load/v 12, v0x27fa070_0, 4;
+    %load/v 16, v0x27fa6f0_0, 4;
     %add 12, 16, 4;
     %cmp/u 8, 12, 4;
     %inv 6, 1;
-    %jmp/0xz  T_5.2, 6;
-    %vpi_call 3 42 "$display", "Wrong Answer!";
-T_5.2 ;
+    %jmp/0xz  T_0.2, 6;
+    %vpi_call 2 42 "$display", "Wrong Answer!";
+T_0.2 ;
     %ix/load 0, 1, 0;
-    %load/vp0/s 8, v0x22fbca0_0, 32;
-    %set/v v0x22fbca0_0, 8, 32;
-    %jmp T_5.0;
-T_5.1 ;
-    %vpi_call 3 45 "$display", "Congratulations! You have passed all of the tests.";
-    %vpi_call 3 46 "$finish";
+    %load/vp0/s 8, v0x27fa8a0_0, 32;
+    %set/v v0x27fa8a0_0, 8, 32;
+    %jmp T_0.0;
+T_0.1 ;
+    %vpi_call 2 45 "$display", "Congratulations! You have passed all of the tests.";
+    %vpi_call 2 46 "$finish";
     %end;
-    .thread T_5;
+    .thread T_0;
 # The file index is used to find the file name in the following table.
 :file_names 4;
     "N/A";
     "<interactive>";
-    "./adder2.v";
     "debug.v";
+    "./adder4.v";

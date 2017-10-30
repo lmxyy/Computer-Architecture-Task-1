@@ -26,11 +26,14 @@ module test_adder;
 	integer i;
 	initial begin
 		for(i=1; i<=100; i=i+1) begin
-			a[14:0] = $random;
-			a[15] = 0;
-			b[14:0] = $random;
-			b[15] = 0;
-			
+		   a[14:0] = $random;
+		   a[15] = 0;
+		   b[14:0] = $random;
+		   b[15] = 0;
+		   
+		   // a = 1;
+		   // b = 1;
+		   
 			#1;
 			$display("TESTCASE %d: %d + %d = %d", i, a, b, answer);
 
