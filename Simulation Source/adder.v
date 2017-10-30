@@ -1,3 +1,11 @@
+module adder1(x,y,sum,cin,cout);
+   input x,y,cin;
+   output sum,cout;
+   
+   assign sum = x^y^cin;
+   assign cout = (x&y)^(cin&(x^y));
+endmodule
+
 module adder(x,y,sum);
    parameter maxn = 16;
 
@@ -8,14 +16,15 @@ module adder(x,y,sum);
    reg [maxn-1:0] sum;
    integer i;
 	 
-   always @(x,y)
-	 begin
-		C[0] = 0;
-		for (i = 0;i < maxn;i = i+1)
-		  begin
-			 sum[i] = x[i]^y[i]^C[i];
-			 C[i+1] = (x[i]&y[i])^(C[i]&(x[i]^y[i]));
-		  end
-	 end		
+   // always @(x,y)
+   // 	 begin
+   // 		C[0] = 0;
+   // 		for (i = 0;i < maxn;i = i+1)
+   // 		  begin
+   // 			 sum[i] = x[i]^y[i]^C[i];
+   // 			 C[i+1] = (x[i]&y[i])^(C[i]&(x[i]^y[i]));
+   // 		  end
+   // 	 end
+   
 endmodule // adder
 
