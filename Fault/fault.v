@@ -42,10 +42,7 @@ module testfault;
 endmodule
 
 module fault(a,b,answer);
-	input wire[15:0] a,b;
-	output wire[15:0] answer;
-	// if(a>b)
-		assign answer=a;
-	// else
-		assign answer=b;
+   input wire[15:0] a,b;
+   output wire [15:0] answer;
+   assign answer = a>b?a:b;
 endmodule
