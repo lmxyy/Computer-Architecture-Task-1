@@ -1,0 +1,124 @@
+\documentclass[11pt]{article} 
+\usepackage{bm}
+\usepackage{cmap}
+\usepackage{ctex}
+\usepackage{cite}
+\usepackage{color}
+\usepackage{float}
+\usepackage{xeCJK}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{setspace}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{enumerate}
+\usepackage{indentfirst}
+\usepackage{yfonts}
+\usepackage{pdfpages}
+
+\usepackage[cache=false]{minted}
+
+%代码高亮
+\geometry{margin=1in}
+
+\newcommand{\cppcode}[1]
+{
+  \inputminted[mathescape,
+  tabsize=4,
+  linenos,
+  framesep=2mm,
+  breakaftergroup=true,
+  breakautoindent=true,
+  breakbytoken=true,
+  breaklines=true,
+  fontsize=\small
+  ]{cpp}{Source/#1}
+}
+
+\newcommand{\javacode}[1]
+{
+  \inputminted[mathescape,
+  tabsize=4,
+  linenos,
+  framesep=2mm,
+  breakaftergroup=true,
+  breakautoindent=true,
+  breakbytoken=true,
+  breaklines=true,
+  fontsize=\small
+  ]{java}{Source/#1}
+}
+
+\newcommand{\emacscode}[1]
+{
+  \inputminted[mathescape,
+  tabsize=4,
+  linenos,
+  % frame=single,
+  framesep=2mm,
+  breakaftergroup=true,
+  breakautoindent=true,
+  breakbytoken=true,
+  breaklines=true,
+  fontsize=\small
+  ]{emacs}{Source/#1}
+}
+
+\newcommand{\verilogcode}[1]
+{
+  \inputminted[mathescape,
+  tabsize=4,
+  linenos,
+  % frame=single,
+  framesep=2mm,
+  breakaftergroup=true,
+  breakautoindent=true,
+  breakbytoken=true,
+  breaklines=true,
+  fontsize=\small
+  ]{verilog}{#1}
+}
+
+\title{\Huge Computer Architecture Homework of Lmxyy\thanks{https://github.com/lmxyy/Computer-Architecture-Task-1}}
+\author{李沐阳 516021910346 \\ \emph{Shanghai Jiao Tong University}}
+\date{\today}
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+\section{Task 1}
+\subsection{Subtask 1}
+\verilogcode{adder.v}
+\newpage
+\subsection{Subtask 2}
+\verilogcode{adder2.v}
+\subsection{Subtask 3}
+答：由于超前16位进位加法器中，进位不存在数据依赖性，即进位不需要依赖前一位的结果，可以从输入信号中直接得出，从而可以进行并行计算。他优化了暴力加法器中，数据转运所需要的时间。
+
+\section{Task 2}
+\subsection{Subtask 1}
+\verilogcode{fault.v}
+\subsection{Subtask 2}
+\verilogcode{fault2.v}
+\newpage
+\subsection{Subtask 3}
+答：从软件思路讲，这时：
+\begin{itemize}
+\item wire对应于连续赋值，如assign;
+\item reg对应于过程赋值，如always，initial。
+\end{itemize}
+
+从电路角度考虑，这时：
+\begin{itemize}
+\item wire型的变量综合出来一般是一根导线；
+\item reg变量在always块中有两种情况：
+  \begin{enumerate}
+  \item always后的敏感表中是（a or b or c）形式的，也就是不带时钟边沿的，综合出来还是组合逻辑；
+  \item always后的敏感表中是（posedge clk）形式的，也就是带边沿的，综合出来一般是时序逻辑，会包含触发器（Flip－Flop）。
+  \end{enumerate}
+\end{itemize}
+\subsection{Subtask 4}
+答：搭配assign时，或要变量连续赋值时，reg不能够当成wire；否则可以将reg当成wire用。
+\end{document}
